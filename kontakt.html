@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – Marlene Krinninger Reiki-Behandlung</title>
+  <meta name="description" content="Termin vereinbaren bei Marlene Krinninger – Reiki-Behandlung in Ortenburg.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F7F2EA;
+      --green: #3A5440;
+      --green-dark: #2C4034;
+      --green-light: #4E6B56;
+      --gold: #C4956A;
+      --beige: #EADDD3;
+      --beige-dark: #D0C4B8;
+      --text: #3C3530;
+      --text-muted: #7A6F68;
+      --white: #FFFFFF;
+      --shadow: rgba(58,84,64,0.12);
+      --radius: 12px;
+      --t: 0.3s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; font-family: inherit; }
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.25; }
+
+    .inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; border-radius: 50px;
+      font-family: 'Lato', sans-serif; font-size: 0.85rem;
+      font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: var(--t); border: 2px solid transparent; cursor: pointer;
+    }
+    .btn-primary { background: var(--green); color: var(--cream); border-color: var(--green); }
+    .btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--green); border-color: var(--green); }
+    .btn-outline:hover { background: var(--green); color: var(--cream); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .rd1 { transition-delay: 0.1s; } .rd2 { transition-delay: 0.2s; } .rd3 { transition-delay: 0.3s; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 16px 40px; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(247,242,234,0.96);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 2px 24px rgba(58,84,64,0.08);
+    }
+    .nav-logo { display: flex; flex-direction: column; line-height: 1.15; }
+    .nav-logo-name { font-family: 'Dancing Script', cursive; font-size: 1.45rem; color: var(--green); font-weight: 700; }
+    .nav-logo-sub { font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+    .nav-back { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--text-muted); transition: color var(--t); }
+    .nav-back:hover { color: var(--green); }
+    .nav-back svg { transition: transform var(--t); }
+    .nav-back:hover svg { transform: translateX(-3px); }
+
+    /* HEADER */
+    .page-header {
+      background: var(--green);
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header::before {
+      content: ''; position: absolute; top: -30%; left: -10%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(196,149,106,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .page-header::after {
+      content: ''; position: absolute; bottom: -20%; right: -8%;
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(247,242,234,0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .header-label { font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); font-weight: 700; display: block; margin-bottom: 14px; }
+    .header-title { font-size: clamp(2rem, 4vw, 3.2rem); color: var(--cream); margin-bottom: 14px; }
+    .header-sub { font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: rgba(247,242,234,0.75); }
+
+    /* WAVE */
+    .wave { display: block; width: 100%; overflow: hidden; line-height: 0; }
+    .wave svg { display: block; width: 100%; }
+
+    /* MAIN LAYOUT */
+    .main-wrap { padding: 64px 0 80px; }
+    .form-layout { display: grid; grid-template-columns: 1fr 380px; gap: 56px; align-items: start; }
+
+    /* FORM CARD */
+    .form-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 48px 44px;
+      box-shadow: 0 4px 32px var(--shadow);
+    }
+    .form-card h2 { font-size: 1.6rem; color: var(--green-dark); margin-bottom: 8px; }
+    .form-card .form-sub { font-size: 0.93rem; color: var(--text-muted); margin-bottom: 36px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-group { margin-bottom: 22px; }
+    .form-group label {
+      display: block; font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 8px;
+    }
+    .form-group label .opt { font-weight: 400; text-transform: none; letter-spacing: 0; opacity: 0.7; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--beige-dark);
+      border-radius: 8px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--cream);
+      transition: border-color var(--t), box-shadow var(--t);
+      appearance: none; -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(58,84,64,0.1);
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A6F68' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+    }
+    .form-group textarea { resize: vertical; min-height: 130px; line-height: 1.6; }
+
+    /* Availability checkboxes */
+    .avail-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; display: block; }
+    .avail-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 22px; }
+    .avail-item { position: relative; }
+    .avail-item input[type="checkbox"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .avail-item label {
+      display: block; padding: 10px 14px; border-radius: 8px;
+      border: 1.5px solid var(--beige-dark); background: var(--cream);
+      font-size: 0.82rem; font-weight: 700; color: var(--text-muted);
+      text-align: center; cursor: pointer; letter-spacing: 0; text-transform: none;
+      transition: border-color var(--t), background var(--t), color var(--t);
+    }
+    .avail-item input:checked + label {
+      border-color: var(--green); background: rgba(58,84,64,0.08); color: var(--green);
+    }
+    .avail-item input:focus-visible + label { box-shadow: 0 0 0 3px rgba(58,84,64,0.15); }
+
+    /* Privacy */
+    .privacy-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 28px; }
+    .privacy-row input[type="checkbox"] {
+      width: 18px; height: 18px; flex-shrink: 0; margin-top: 3px;
+      accent-color: var(--green); cursor: pointer;
+    }
+    .privacy-row label { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; cursor: pointer; }
+    .privacy-row a { color: var(--green); text-decoration: underline; }
+
+    .submit-btn { width: 100%; padding: 15px; font-size: 0.95rem; }
+
+    /* SUCCESS STATE */
+    .form-success {
+      display: none; text-align: center; padding: 48px 24px;
+    }
+    .form-success .success-icon { font-size: 3.5rem; display: block; margin-bottom: 20px; }
+    .form-success h3 { font-size: 1.5rem; color: var(--green-dark); margin-bottom: 12px; }
+    .form-success p { color: var(--text-muted); max-width: 380px; margin: 0 auto 28px; }
+
+    /* SIDEBAR */
+    .sidebar { display: flex; flex-direction: column; gap: 24px; }
+
+    .sidebar-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 26px;
+      box-shadow: 0 4px 24px var(--shadow);
+    }
+    .sidebar-card h3 { font-size: 1.1rem; color: var(--green-dark); margin-bottom: 18px; }
+
+    .contact-list { display: flex; flex-direction: column; gap: 14px; }
+    .contact-row { display: flex; align-items: center; gap: 12px; }
+    .c-ico {
+      width: 38px; height: 38px; flex-shrink: 0; border-radius: 50%;
+      background: var(--cream); display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    }
+    .c-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 1px; }
+    .c-val { font-size: 0.88rem; color: var(--text); }
+    .c-val a { transition: color var(--t); }
+    .c-val a:hover { color: var(--green); }
+
+    .hours-list { display: flex; flex-direction: column; gap: 8px; }
+    .hours-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--beige); font-size: 0.88rem; }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-day { color: var(--text-muted); }
+    .hours-time { color: var(--text); font-weight: 700; }
+
+    .expect-list { display: flex; flex-direction: column; gap: 10px; }
+    .expect-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
+    .expect-item::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    .quote-box {
+      background: var(--green); border-radius: var(--radius); padding: 28px 24px; text-align: center;
+    }
+    .quote-box .q-text { font-family: 'Dancing Script', cursive; font-size: 1.35rem; color: var(--cream); line-height: 1.5; }
+
+    /* IMPRESSUM / DATENSCHUTZ TABS */
+    .legal-section { padding: 0 0 80px; }
+    .tabs { display: flex; gap: 0; border-bottom: 2px solid var(--beige-dark); margin-bottom: 40px; }
+    .tab-btn {
+      padding: 14px 28px; background: none; border: none;
+      font-family: 'Lato', sans-serif; font-size: 0.82rem;
+      font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-muted); cursor: pointer; transition: color var(--t);
+      border-bottom: 2px solid transparent; margin-bottom: -2px;
+    }
+    .tab-btn.active { color: var(--green); border-bottom-color: var(--green); }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; }
+    .legal-content h3 { font-size: 1.05rem; color: var(--green-dark); margin: 24px 0 8px; }
+    .legal-content h3:first-child { margin-top: 0; }
+    .legal-content p, .legal-content address { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; font-style: normal; margin-bottom: 10px; }
+    .legal-content a { color: var(--green); text-decoration: underline; }
+
+    /* FOOTER */
+    footer { background: var(--green-dark); padding: 36px 40px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .f-name { font-family: 'Dancing Script', cursive; font-size: 1.2rem; color: var(--cream); margin-bottom: 3px; }
+    .f-addr { font-size: 0.78rem; color: rgba(247,242,234,0.5); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.76rem; letter-spacing: 0.1em; color: rgba(247,242,234,0.45); transition: color var(--t); }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding-left: 20px; padding-right: 20px; }
+      .inner { padding: 0 20px; }
+      .form-layout { grid-template-columns: 1fr; }
+      .sidebar { order: -1; }
+      .avail-grid { grid-template-columns: repeat(2,1fr); }
+      footer { padding: 28px 20px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 540px) {
+      .form-card { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .avail-grid { grid-template-columns: repeat(2,1fr); }
+      .page-header { padding: 100px 0 64px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-name">Marlene Krinninger</span>
+    <span class="nav-logo-sub">Reiki-Behandlung</span>
+  </a>
+  <a href="index.html" class="nav-back">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Zurück
+  </a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <span class="header-label">Termin vereinbaren</span>
+  <h1 class="header-title">Schreib mir eine Nachricht</h1>
+  <p class="header-sub">Ich freue mich auf dich.</p>
+</div>
+<div class="wave" style="background:var(--green);">
+  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" style="height:56px;"><path d="M0,40 C360,56 1080,20 1440,40 L1440,56 L0,56 Z" fill="#F7F2EA"/></svg>
+</div>
+
+<!-- MAIN -->
+<div class="main-wrap">
+  <div class="inner">
+    <div class="form-layout">
+
+      <!-- FORM -->
+      <div class="form-card reveal">
+        <h2>Deine Anfrage</h2>
+        <p class="form-sub">Füll das Formular aus und ich melde mich zeitnah bei dir.</p>
+
+        <form id="contactForm" action="https://formspree.io/f/DEINE_FORMSPREE_ID" method="POST" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vorname">Vorname *</label>
+              <input type="text" id="vorname" name="vorname" required autocomplete="given-name" placeholder="Maria">
+            </div>
+            <div class="form-group">
+              <label for="nachname">Nachname *</label>
+              <input type="text" id="nachname" name="nachname" required autocomplete="family-name" placeholder="Musterfrau">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">E-Mail *</label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="maria@beispiel.de">
+            </div>
+            <div class="form-group">
+              <label for="telefon">Telefon <span class="opt">(optional)</span></label>
+              <input type="tel" id="telefon" name="telefon" autocomplete="tel" placeholder="+49 …">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="anliegen">Was bringt dich zu mir? *</label>
+            <select id="anliegen" name="anliegen" required>
+              <option value="" disabled selected>Bitte auswählen …</option>
+              <option value="ersttermin">Ersttermin – ich möchte Reiki kennenlernen</option>
+              <option value="stress">Stress & Erschöpfung abbauen</option>
+              <option value="blockaden">Innere Blockaden lösen</option>
+              <option value="erschoepfung">Chronische Erschöpfung</option>
+              <option value="schmerzen">Körperliche Beschwerden / Schmerzen</option>
+              <option value="trauer">Trauer & emotionale Belastung</option>
+              <option value="energie">Mehr Energie & Lebensfreude</option>
+              <option value="balance">Innere Balance finden</option>
+              <option value="sonstiges">Sonstiges</option>
+            </select>
+          </div>
+
+          <span class="avail-label">Wann bist du verfügbar?</span>
+          <div class="avail-grid">
+            <div class="avail-item"><input type="checkbox" id="av1" name="verfuegbarkeit" value="mo-do-vm"><label for="av1">Mo–Do Vormittag</label></div>
+            <div class="avail-item"><input type="checkbox" id="av2" name="verfuegbarkeit" value="mo-do-nm"><label for="av2">Mo–Do Nachmittag</label></div>
+            <div class="avail-item"><input type="checkbox" id="av3" name="verfuegbarkeit" value="freitag"><label for="av3">Freitag</label></div>
+            <div class="avail-item"><input type="checkbox" id="av4" name="verfuegbarkeit" value="wochenende"><label for="av4">Wochenende</label></div>
+            <div class="avail-item"><input type="checkbox" id="av5" name="verfuegbarkeit" value="abend"><label for="av5">Abend</label></div>
+            <div class="avail-item"><input type="checkbox" id="av6" name="verfuegbarkeit" value="flexibel"><label for="av6">Flexibel</label></div>
+          </div>
+
+          <div class="form-group">
+            <label for="nachricht">Deine Nachricht <span class="opt">(optional)</span></label>
+            <textarea id="nachricht" name="nachricht" placeholder="Was möchtest du mir noch mitteilen? Gibt es etwas Besonderes, das ich wissen sollte?"></textarea>
+          </div>
+
+          <div class="privacy-row">
+            <input type="checkbox" id="datenschutz" name="datenschutz" required>
+            <label for="datenschutz">Ich habe die <a href="#datenschutz">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage verwendet werden. *</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary submit-btn">Anfrage senden →</button>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <span class="success-icon">🌿</span>
+          <h3>Vielen Dank!</h3>
+          <p>Deine Anfrage ist bei mir angekommen. Ich melde mich bald bei dir.</p>
+          <a href="index.html" class="btn btn-outline">Zurück zur Startseite</a>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <div class="sidebar-card reveal rd1">
+          <h3>Direkter Kontakt</h3>
+          <div class="contact-list">
+            <div class="contact-row">
+              <div class="c-ico">📞</div>
+              <div><div class="c-label">Telefon</div><div class="c-val"><a href="tel:+491712020208">+49 171 2020208</a></div></div>
+            </div>
+            <div class="contact-row">
+              <div class="c-ico">✉️</div>
+              <div><div class="c-label">E-Mail</div><div class="c-val"><a href="mailto:marlene.hajek2202@gmail.com">marlene.hajek2202@gmail.com</a></div></div>
+            </div>
+            <div class="contact-row">
+              <div class="c-ico">📍</div>
+              <div><div class="c-label">Adresse</div><div class="c-val">Würding 8<br>94496 Ortenburg</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card reveal rd2">
+          <h3>Termine nach Vereinbarung</h3>
+          <div class="hours-list">
+            <div class="hours-row"><span class="hours-day">Montag – Donnerstag</span><span class="hours-time">Flexibel</span></div>
+            <div class="hours-row"><span class="hours-day">Freitag</span><span class="hours-time">Flexibel</span></div>
+            <div class="hours-row"><span class="hours-day">Wochenende</span><span class="hours-time">Auf Anfrage</span></div>
+            <div class="hours-row"><span class="hours-day">Abendtermine</span><span class="hours-time">Möglich</span></div>
+          </div>
+        </div>
+
+        <div class="sidebar-card reveal rd3">
+          <h3>Das erwartet dich</h3>
+          <div class="expect-list">
+            <div class="expect-item">Ein ruhiger, geschützter Behandlungsraum</div>
+            <div class="expect-item">Persönliches Gespräch vor der Sitzung</div>
+            <div class="expect-item">60–90 Minuten tiefe Entspannung</div>
+            <div class="expect-item">Sanfte Handauflegung – bekleidet</div>
+            <div class="expect-item">Nachbesprechung und individuelle Empfehlung</div>
+          </div>
+        </div>
+
+        <div class="quote-box reveal rd3">
+          <p class="q-text">„Berührt werden. Loslassen. Bei dir ankommen."</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- IMPRESSUM / DATENSCHUTZ -->
+<div class="legal-section" id="legal">
+  <div class="inner">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="impressum" id="impressum">Impressum</button>
+      <button class="tab-btn" data-tab="datenschutz" id="datenschutz">Datenschutz</button>
+    </div>
+    <div class="tab-pane active" id="pane-impressum">
+      <div class="legal-content">
+        <h3>Angaben gemäß § 5 TMG</h3>
+        <address>
+          Marlene Krinninger<br>
+          Würding 8<br>
+          94496 Ortenburg<br><br>
+          Telefon: +49 171 2020208<br>
+          E-Mail: <a href="mailto:marlene.hajek2202@gmail.com">marlene.hajek2202@gmail.com</a>
+        </address>
+        <h3>Verantwortlich für den Inhalt</h3>
+        <p>Marlene Krinninger, Würding 8, 94496 Ortenburg</p>
+        <h3>Haftungsausschluss</h3>
+        <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir keine Gewähr. Reiki ist keine medizinische Behandlung und ersetzt keine ärztliche Diagnose oder Therapie.</p>
+        <h3>Urheberrecht</h3>
+        <p>Die auf dieser Website veröffentlichten Inhalte unterliegen dem deutschen Urheberrecht. Eine Vervielfältigung, Bearbeitung oder Verbreitung bedarf der schriftlichen Genehmigung der Autorin.</p>
+      </div>
+    </div>
+    <div class="tab-pane" id="pane-datenschutz">
+      <div class="legal-content">
+        <h3>Datenschutzerklärung</h3>
+        <p>Der Schutz Ihrer persönlichen Daten ist mir ein wichtiges Anliegen. Ich verarbeite Ihre Daten ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TMG).</p>
+        <h3>Verantwortliche Stelle</h3>
+        <address>
+          Marlene Krinninger · Würding 8 · 94496 Ortenburg<br>
+          E-Mail: <a href="mailto:marlene.hajek2202@gmail.com">marlene.hajek2202@gmail.com</a>
+        </address>
+        <h3>Kontaktformular</h3>
+        <p>Wenn Sie mir über das Kontaktformular eine Nachricht senden, werden die von Ihnen angegebenen Daten zur Bearbeitung Ihrer Anfrage und für den Fall von Anschlussfragen bei mir gespeichert. Diese Daten gebe ich nicht ohne Ihre Einwilligung weiter. Das Formular wird über Formspree (formspree.io) verarbeitet.</p>
+        <h3>Ihre Rechte</h3>
+        <p>Sie haben jederzeit das Recht auf Auskunft über Ihre gespeicherten Daten, deren Herkunft, Empfänger und den Zweck der Speicherung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Für Fragen wenden Sie sich bitte an: <a href="mailto:marlene.hajek2202@gmail.com">marlene.hajek2202@gmail.com</a></p>
+        <h3>Cookies</h3>
+        <p>Diese Website verwendet keine Tracking-Cookies. Es werden keine personenbezogenen Daten durch Cookies erhoben.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="f-name">Marlene Krinninger</div>
+      <div class="f-addr">Reiki-Behandlung · Würding 8, 94496 Ortenburg</div>
+    </div>
+    <nav class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="#impressum">Impressum</a>
+      <a href="#datenschutz">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Form submit
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        alert('Es gab einen Fehler. Bitte versuche es erneut oder kontaktiere mich direkt.');
+      }
+    } catch {
+      alert('Verbindungsfehler. Bitte kontaktiere mich direkt per Telefon oder E-Mail.');
+    }
+  });
+
+  // Tabs
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('pane-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Hash-based tab activation
+  if (window.location.hash === '#datenschutz') {
+    document.querySelector('[data-tab="datenschutz"]').click();
+    document.getElementById('legal').scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
