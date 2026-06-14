@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marlene Krinninger – Reiki-Behandlung Ortenburg</title>
+  <meta name="description" content="Reiki-Behandlung bei Marlene Krinninger in Ortenburg. Ganzheitlich, sanft, wirksam.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F7F2EA;
+      --green: #3A5440;
+      --green-dark: #2C4034;
+      --green-light: #4E6B56;
+      --gold: #C4956A;
+      --beige: #EADDD3;
+      --beige-dark: #D0C4B8;
+      --text: #3C3530;
+      --text-muted: #7A6F68;
+      --white: #FFFFFF;
+      --shadow: rgba(58,84,64,0.12);
+      --radius: 12px;
+      --t: 0.35s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; font-family: inherit; }
+
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.25; }
+
+    .section-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .inner { max-width: 1140px; margin: 0 auto; padding: 0 48px; }
+    section { padding: 100px 0; }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 30px; border-radius: 50px;
+      font-family: 'Lato', sans-serif; font-size: 0.85rem;
+      font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: var(--t); border: 2px solid transparent;
+    }
+    .btn-primary { background: var(--green); color: var(--cream); border-color: var(--green); }
+    .btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 24px var(--shadow); }
+    .btn-outline { background: transparent; color: var(--green); border-color: var(--green); }
+    .btn-outline:hover { background: var(--green); color: var(--cream); transform: translateY(-2px); }
+    .btn-cream { background: var(--cream); color: var(--green); border-color: var(--cream); }
+    .btn-cream:hover { background: var(--white); transform: translateY(-2px); }
+    .btn-outline-light { background: transparent; color: var(--cream); border-color: rgba(247,242,234,0.45); }
+    .btn-outline-light:hover { border-color: var(--cream); background: rgba(247,242,234,0.08); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .rd1 { transition-delay: 0.1s; } .rd2 { transition-delay: 0.2s; } .rd3 { transition-delay: 0.3s; }
+    .rd4 { transition-delay: 0.4s; } .rd5 { transition-delay: 0.5s; } .rd6 { transition-delay: 0.6s; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 20px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background var(--t), padding var(--t), box-shadow var(--t);
+    }
+    nav.scrolled {
+      background: rgba(247,242,234,0.96);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      padding: 12px 48px;
+      box-shadow: 0 2px 24px rgba(58,84,64,0.08);
+    }
+    .nav-logo { display: flex; flex-direction: column; line-height: 1.15; }
+    .nav-logo-name { font-family: 'Dancing Script', cursive; font-size: 1.55rem; color: var(--green); font-weight: 700; }
+    .nav-logo-sub { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a {
+      font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
+      font-weight: 700; color: var(--text); position: relative; transition: color var(--t);
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
+      height: 1px; background: var(--gold);
+      transform: scaleX(0); transition: transform var(--t); transform-origin: center;
+    }
+    .nav-links a:hover { color: var(--green); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta { margin-left: 12px; padding: 10px 22px !important; font-size: 0.78rem !important; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--green); border-radius: 2px; transition: var(--t); }
+
+    .mobile-menu {
+      display: none; position: fixed; inset: 0;
+      background: var(--cream); z-index: 99;
+      flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--green); }
+    .mobile-close {
+      position: absolute; top: 20px; right: 24px;
+      font-size: 2.2rem; background: none; border: none; color: var(--text); line-height: 1;
+    }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding-top: 80px; background: var(--cream); position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: ''; position: absolute; top: -15%; right: -8%;
+      width: 580px; height: 580px;
+      background: radial-gradient(circle, rgba(196,149,106,0.09) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    #hero::after {
+      content: ''; position: absolute; bottom: 10%; left: -5%;
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(58,84,64,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .hero-label { font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 20px; }
+    .hero-headline {
+      font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 600;
+      color: var(--green-dark); line-height: 1.2; margin-bottom: 24px;
+    }
+    .hero-tagline-wrap { height: 44px; overflow: hidden; margin-bottom: 32px; position: relative; }
+    .hero-tagline {
+      font-family: 'Dancing Script', cursive; font-size: 1.65rem; color: var(--gold);
+      opacity: 0; transform: translateY(14px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+      position: absolute; white-space: nowrap;
+    }
+    .hero-tagline.active { opacity: 1; transform: translateY(0); position: relative; }
+    .hero-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+    .hero-badge {
+      padding: 6px 16px; border-radius: 50px;
+      border: 1px solid var(--beige-dark);
+      font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-muted); font-weight: 700; background: rgba(255,255,255,0.5);
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-visual { display: flex; align-items: center; justify-content: center; }
+    .tree-wrap {
+      width: 100%; max-width: 380px; position: relative;
+    }
+    .tree-wrap::before {
+      content: ''; position: absolute; inset: -10%;
+      background: radial-gradient(ellipse at 50% 55%, rgba(196,149,106,0.1) 0%, transparent 65%);
+      border-radius: 50%;
+    }
+
+    /* WAVE */
+    .wave { display: block; width: 100%; overflow: hidden; line-height: 0; }
+    .wave svg { display: block; width: 100%; }
+
+    /* REIKI */
+    #reiki { background: var(--white); }
+    .reiki-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .reiki-text h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); color: var(--green-dark); margin-bottom: 24px; }
+    .reiki-text p { color: var(--text-muted); margin-bottom: 16px; font-size: 1rem; }
+    .facts-card {
+      background: var(--cream); border-radius: var(--radius);
+      padding: 36px; border-left: 4px solid var(--gold);
+    }
+    .facts-card h3 { font-size: 1.15rem; color: var(--green); margin-bottom: 24px; }
+    .fact-row { display: grid; grid-template-columns: 90px 1fr; gap: 8px 16px; padding: 11px 0; border-bottom: 1px solid var(--beige-dark); }
+    .fact-row:last-child { border-bottom: none; }
+    .fact-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 700; padding-top: 2px; }
+    .fact-val { font-size: 0.93rem; color: var(--text); }
+
+    /* WIRKUNG */
+    #wirkung { background: var(--green); color: var(--cream); }
+    .wirkung-head { text-align: center; margin-bottom: 60px; }
+    .wirkung-head h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); color: var(--cream); margin-bottom: 14px; }
+    .wirkung-head p { color: rgba(247,242,234,0.72); max-width: 540px; margin: 0 auto; }
+    .benefits-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+    .benefit-card {
+      background: rgba(247,242,234,0.07); border: 1px solid rgba(247,242,234,0.11);
+      border-radius: var(--radius); padding: 26px 22px;
+      transition: background var(--t), transform var(--t);
+    }
+    .benefit-card:hover { background: rgba(247,242,234,0.13); transform: translateY(-4px); }
+    .benefit-icon { font-size: 1.9rem; display: block; margin-bottom: 13px; }
+    .benefit-card h3 { font-size: 1rem; color: var(--cream); margin-bottom: 9px; }
+    .benefit-card p { font-size: 0.86rem; color: rgba(247,242,234,0.68); line-height: 1.6; }
+
+    /* SITZUNG */
+    #sitzung { background: var(--cream); }
+    .sitzung-head { text-align: center; margin-bottom: 68px; }
+    .sitzung-head h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); color: var(--green-dark); }
+    .steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; margin-bottom: 48px; }
+    .step {
+      position: relative; padding: 30px 22px;
+      background: var(--white); border-radius: var(--radius); overflow: hidden;
+    }
+    .step-num {
+      position: absolute; top: -8px; right: 14px;
+      font-family: 'Playfair Display', serif; font-size: 5rem;
+      font-weight: 700; color: var(--beige); line-height: 1;
+      user-select: none; pointer-events: none;
+    }
+    .step-icon { font-size: 1.7rem; display: block; margin-bottom: 14px; }
+    .step h3 { font-size: 1rem; color: var(--green-dark); margin-bottom: 10px; }
+    .step p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
+    .disclaimer {
+      background: var(--beige); border-radius: var(--radius);
+      padding: 22px 28px; display: flex; gap: 14px; align-items: flex-start;
+      border-left: 3px solid var(--gold);
+    }
+    .disclaimer p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.6; }
+    .disclaimer strong { color: var(--text); }
+
+    /* QUOTE */
+    #quote { background: var(--beige); padding: 80px 48px; text-align: center; }
+    .quote-inner { max-width: 760px; margin: 0 auto; }
+    .quote-mark { font-family: 'Dancing Script', cursive; font-size: 7rem; color: rgba(196,149,106,0.22); line-height: 0.5; display: block; margin-bottom: -16px; }
+    .quote-text { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2.3rem); color: var(--green-dark); font-style: italic; line-height: 1.4; margin-bottom: 14px; }
+    .quote-by { font-family: 'Dancing Script', cursive; font-size: 1.15rem; color: var(--gold); }
+
+    /* ARBEITSWEISE */
+    #arbeitsweise { background: var(--white); }
+    .arbeitsweise-head { text-align: center; margin-bottom: 60px; }
+    .arbeitsweise-head h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); color: var(--green-dark); }
+    .pillars-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    .pillar {
+      text-align: center; padding: 44px 28px;
+      border-radius: var(--radius); background: var(--cream);
+      border-top: 3px solid var(--gold);
+      transition: transform var(--t), box-shadow var(--t);
+    }
+    .pillar:hover { transform: translateY(-6px); box-shadow: 0 16px 40px var(--shadow); }
+    .pillar-icon { font-size: 2.4rem; display: block; margin-bottom: 18px; }
+    .pillar h3 { font-size: 1.25rem; color: var(--green-dark); margin-bottom: 12px; }
+    .pillar p { font-size: 0.94rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* FAQ */
+    #faq { background: var(--cream); }
+    .faq-head { text-align: center; margin-bottom: 52px; }
+    .faq-head h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); color: var(--green-dark); }
+    .faq-list { max-width: 760px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--beige-dark); }
+    .faq-q {
+      width: 100%; background: none; border: none;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 0; text-align: left;
+      font-family: 'Playfair Display', serif; font-size: 1.03rem; color: var(--text);
+      gap: 16px; transition: color var(--t);
+    }
+    .faq-q:hover, .faq-q.open { color: var(--green); }
+    .faq-ico {
+      flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+      border: 1.5px solid var(--gold); display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 1rem; font-style: normal; font-family: 'Lato', sans-serif;
+      transition: transform var(--t), background var(--t);
+    }
+    .faq-q.open .faq-ico { background: var(--gold); color: var(--white); transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-a.open { max-height: 280px; }
+    .faq-a-inner { padding: 0 0 20px; font-size: 0.96rem; color: var(--text-muted); line-height: 1.75; }
+    .faq-a-inner a { color: var(--green); text-decoration: underline; }
+
+    /* KONTAKT */
+    #kontakt { background: var(--green); color: var(--cream); }
+    .kontakt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .kontakt-info h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); color: var(--cream); margin-bottom: 36px; }
+    .k-items { display: flex; flex-direction: column; gap: 22px; }
+    .k-item { display: flex; align-items: center; gap: 16px; }
+    .k-ico {
+      width: 48px; height: 48px; flex-shrink: 0; border-radius: 50%;
+      background: rgba(247,242,234,0.1); border: 1px solid rgba(247,242,234,0.18);
+      display: flex; align-items: center; justify-content: center; font-size: 1.15rem;
+    }
+    .k-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,242,234,0.5); margin-bottom: 2px; }
+    .k-val { font-size: 0.98rem; color: var(--cream); }
+    .k-val a { color: var(--cream); transition: color var(--t); }
+    .k-val a:hover { color: var(--gold); }
+    .cta-box {
+      background: rgba(247,242,234,0.08); border: 1px solid rgba(247,242,234,0.14);
+      border-radius: var(--radius); padding: 44px 36px; text-align: center;
+    }
+    .cta-box .script-line { font-family: 'Dancing Script', cursive; font-size: 1.75rem; color: var(--gold); display: block; margin-bottom: 14px; }
+    .cta-box h3 { font-size: 1.35rem; color: var(--cream); margin-bottom: 12px; }
+    .cta-box p { font-size: 0.93rem; color: rgba(247,242,234,0.68); margin-bottom: 28px; line-height: 1.6; }
+    .cta-btns { display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
+
+    /* FOOTER */
+    footer { background: var(--green-dark); padding: 44px 48px; }
+    .footer-inner { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-brand .f-name { font-family: 'Dancing Script', cursive; font-size: 1.3rem; color: var(--cream); margin-bottom: 4px; }
+    .footer-brand .f-addr { font-size: 0.8rem; color: rgba(247,242,234,0.55); line-height: 1.5; }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a { font-size: 0.78rem; letter-spacing: 0.1em; color: rgba(247,242,234,0.45); transition: color var(--t); }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .benefits-grid { grid-template-columns: repeat(2,1fr); }
+      .steps-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 900px) {
+      nav, nav.scrolled { padding-left: 24px; padding-right: 24px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 68px 0; }
+      .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 44px; }
+      .hero-badges, .hero-btns { justify-content: center; }
+      .hero-visual { order: -1; }
+      .tree-wrap { max-width: 240px; margin: 0 auto; }
+      .reiki-grid { grid-template-columns: 1fr; gap: 44px; }
+      .pillars-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+      .kontakt-grid { grid-template-columns: 1fr; gap: 44px; }
+    }
+    @media (max-width: 600px) {
+      .inner { padding: 0 20px; }
+      nav, nav.scrolled { padding-left: 20px; padding-right: 20px; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      section { padding: 56px 0; }
+      #quote { padding: 60px 20px; }
+      footer { padding: 36px 20px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#hero" class="nav-logo">
+    <span class="nav-logo-name">Marlene Krinninger</span>
+    <span class="nav-logo-sub">Reiki-Behandlung</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#reiki">Reiki</a></li>
+    <li><a href="#wirkung">Wirkung</a></li>
+    <li><a href="#sitzung">Sitzung</a></li>
+    <li><a href="#arbeitsweise">Über mich</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="kontakt.html" class="btn btn-primary nav-cta">Termin vereinbaren</a>
+  <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Schließen">×</button>
+  <a href="#reiki" class="ml">Reiki</a>
+  <a href="#wirkung" class="ml">Wirkung</a>
+  <a href="#sitzung" class="ml">Sitzung</a>
+  <a href="#arbeitsweise" class="ml">Über mich</a>
+  <a href="#faq" class="ml">FAQ</a>
+  <a href="kontakt.html" class="btn btn-primary" style="margin-top:16px;">Termin vereinbaren</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="inner">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <p class="hero-label reveal">Reiki-Behandlung · Ortenburg</p>
+        <h1 class="hero-headline reveal rd1">Energie, die fließt.<br>Heilung, die berührt.</h1>
+        <div class="hero-tagline-wrap reveal rd2">
+          <p class="hero-tagline active" id="tl0">Entspannung, die bleibt.</p>
+          <p class="hero-tagline" id="tl1">Balance, die trägt.</p>
+          <p class="hero-tagline" id="tl2">Ein Weg zurück zu dir.</p>
+        </div>
+        <div class="hero-badges reveal rd3">
+          <span class="hero-badge">Ganzheitlich</span>
+          <span class="hero-badge">Sanft</span>
+          <span class="hero-badge">Wirksam</span>
+        </div>
+        <div class="hero-btns reveal rd4">
+          <a href="kontakt.html" class="btn btn-primary">Termin vereinbaren</a>
+          <a href="#reiki" class="btn btn-outline">Mehr erfahren</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal rd2">
+        <div class="tree-wrap">
+          <svg viewBox="0 0 260 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lebensbaum">
+            <!-- Roots -->
+            <path d="M130 248 Q106 268 82 275" stroke="#C4956A" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
+            <path d="M130 248 Q120 272 114 286" stroke="#C4956A" stroke-width="2.5" stroke-linecap="round" opacity="0.45"/>
+            <path d="M130 248 Q130 274 130 290" stroke="#C4956A" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+            <path d="M130 248 Q140 272 146 286" stroke="#C4956A" stroke-width="2.5" stroke-linecap="round" opacity="0.45"/>
+            <path d="M130 248 Q154 266 178 273" stroke="#C4956A" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
+            <path d="M82 275 Q66 280 50 277" stroke="#C4956A" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+            <path d="M178 273 Q194 277 210 274" stroke="#C4956A" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+            <!-- Trunk -->
+            <path d="M130 248 C128 228 127 205 130 162" stroke="#3A5440" stroke-width="10" stroke-linecap="round"/>
+            <!-- Branches -->
+            <path d="M130 178 Q100 152 70 138" stroke="#3A5440" stroke-width="6" stroke-linecap="round"/>
+            <path d="M130 178 Q160 152 190 138" stroke="#3A5440" stroke-width="6" stroke-linecap="round"/>
+            <path d="M130 195 Q107 170 88 153" stroke="#3A5440" stroke-width="4.5" stroke-linecap="round"/>
+            <path d="M130 195 Q153 170 172 153" stroke="#3A5440" stroke-width="4.5" stroke-linecap="round"/>
+            <path d="M130 162 Q124 136 116 112" stroke="#3A5440" stroke-width="4" stroke-linecap="round"/>
+            <path d="M130 162 Q136 136 144 112" stroke="#3A5440" stroke-width="4" stroke-linecap="round"/>
+            <path d="M130 162 Q130 132 130 108" stroke="#3A5440" stroke-width="4" stroke-linecap="round"/>
+            <!-- Sub-branches -->
+            <path d="M70 138 Q55 125 44 120" stroke="#3A5440" stroke-width="3" stroke-linecap="round"/>
+            <path d="M70 138 Q63 123 60 112" stroke="#3A5440" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M190 138 Q205 125 216 120" stroke="#3A5440" stroke-width="3" stroke-linecap="round"/>
+            <path d="M190 138 Q197 123 200 112" stroke="#3A5440" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M88 153 Q74 138 66 130" stroke="#3A5440" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M172 153 Q186 138 194 130" stroke="#3A5440" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Leaf crown -->
+            <circle cx="130" cy="72" r="46" fill="#3A5440" opacity="0.11"/>
+            <circle cx="130" cy="68" r="34" fill="#3A5440" opacity="0.14"/>
+            <circle cx="97" cy="98" r="30" fill="#3A5440" opacity="0.12"/>
+            <circle cx="163" cy="98" r="30" fill="#3A5440" opacity="0.12"/>
+            <circle cx="66" cy="112" r="25" fill="#3A5440" opacity="0.1"/>
+            <circle cx="194" cy="112" r="25" fill="#3A5440" opacity="0.1"/>
+            <circle cx="112" cy="60" r="22" fill="#3A5440" opacity="0.13"/>
+            <circle cx="148" cy="60" r="22" fill="#3A5440" opacity="0.13"/>
+            <!-- Leaf tips -->
+            <circle cx="130" cy="48" r="5" fill="#3A5440" opacity="0.5"/>
+            <circle cx="113" cy="42" r="4" fill="#3A5440" opacity="0.4"/>
+            <circle cx="147" cy="42" r="4" fill="#3A5440" opacity="0.4"/>
+            <circle cx="97" cy="54" r="4" fill="#3A5440" opacity="0.35"/>
+            <circle cx="163" cy="54" r="4" fill="#3A5440" opacity="0.35"/>
+            <circle cx="82" cy="68" r="3.5" fill="#3A5440" opacity="0.3"/>
+            <circle cx="178" cy="68" r="3.5" fill="#3A5440" opacity="0.3"/>
+            <circle cx="52" cy="105" r="3" fill="#3A5440" opacity="0.24"/>
+            <circle cx="208" cy="105" r="3" fill="#3A5440" opacity="0.24"/>
+            <!-- Gold dots -->
+            <circle cx="130" cy="38" r="3.5" fill="#C4956A" opacity="0.65"/>
+            <circle cx="108" cy="34" r="2.5" fill="#C4956A" opacity="0.5"/>
+            <circle cx="152" cy="34" r="2.5" fill="#C4956A" opacity="0.5"/>
+            <circle cx="43" cy="115" r="2.5" fill="#C4956A" opacity="0.4"/>
+            <circle cx="217" cy="115" r="2.5" fill="#C4956A" opacity="0.4"/>
+            <!-- Energy center -->
+            <circle cx="130" cy="162" r="9" fill="none" stroke="#C4956A" stroke-width="1.5" opacity="0.4"/>
+            <circle cx="130" cy="162" r="4" fill="#C4956A" opacity="0.65"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:var(--cream);">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,32 C360,48 1080,16 1440,32 L1440,48 L0,48 Z" fill="#ffffff"/></svg>
+</div>
+
+<!-- WAS IST REIKI -->
+<section id="reiki">
+  <div class="inner">
+    <div class="reiki-grid">
+      <div class="reiki-text">
+        <span class="section-label reveal">Was ist Reiki?</span>
+        <h2 class="reveal rd1">Heilenergie durch sanfte Berührung</h2>
+        <p class="reveal rd2">Reiki ist eine japanische Methode zur Stressbewältigung und Entspannung, die auch die Förderung der Heilung unterstützt. Das Wort <em>Reiki</em> setzt sich aus <em>Rei</em> (universell) und <em>Ki</em> (Lebensenergie) zusammen.</p>
+        <p class="reveal rd3">Entwickelt Anfang des 20. Jahrhunderts von Mikao Usui, wird Reiki durch sanftes Auflegen der Hände auf oder über den Körper praktiziert. Ziel ist es, den natürlichen Energiefluss zu unterstützen und Blockaden zu lösen.</p>
+        <p class="reveal rd4">Reiki wirkt auf körperlicher, emotionaler und geistiger Ebene – sanft, nicht-invasiv und ohne Nebenwirkungen. Es kann als wertvolle Ergänzung zur schulmedizinischen Behandlung eingesetzt werden.</p>
+      </div>
+      <div class="facts-card reveal rd2">
+        <h3>Wissenswertes über Reiki</h3>
+        <div class="fact-row"><span class="fact-label">Ursprung</span><span class="fact-val">Japan, frühes 20. Jh. (Mikao Usui)</span></div>
+        <div class="fact-row"><span class="fact-label">Methode</span><span class="fact-val">Sanfte Handauflegung auf Energiepunkte</span></div>
+        <div class="fact-row"><span class="fact-label">Dauer</span><span class="fact-val">60–90 Minuten pro Sitzung</span></div>
+        <div class="fact-row"><span class="fact-label">Wirkung</span><span class="fact-val">Entspannung, Energiefluss, Selbstheilung</span></div>
+        <div class="fact-row"><span class="fact-label">Kleidung</span><span class="fact-val">Bekleidet – keine Entkleidung nötig</span></div>
+        <div class="fact-row"><span class="fact-label">Verbreitung</span><span class="fact-val">Weltweit in über 100 Ländern praktiziert</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:var(--white);">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,16 C480,48 960,0 1440,24 L1440,48 L0,48 Z" fill="#3A5440"/></svg>
+</div>
+
+<!-- WIRKUNG -->
+<section id="wirkung">
+  <div class="inner">
+    <div class="wirkung-head">
+      <span class="section-label reveal">Anwendungsgebiete</span>
+      <h2 class="reveal rd1">Reiki kann unterstützen bei …</h2>
+      <p class="reveal rd2">Reiki begleitet dich auf deinem Weg zu mehr Wohlbefinden – körperlich, emotional und seelisch.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card reveal"><span class="benefit-icon">🌿</span><h3>Stressabbau</h3><p>Tiefe Entspannung und Loslassen von angesammeltem Stress und innerer Anspannung.</p></div>
+      <div class="benefit-card reveal rd1"><span class="benefit-icon">🔓</span><h3>Innere Blockaden</h3><p>Sanfte Auflösung emotionaler und energetischer Blockaden, die dich einengen.</p></div>
+      <div class="benefit-card reveal rd2"><span class="benefit-icon">✨</span><h3>Immunsystem</h3><p>Stärkung der körpereigenen Abwehrkräfte und Unterstützung der Selbstregulation.</p></div>
+      <div class="benefit-card reveal rd3"><span class="benefit-icon">💚</span><h3>Körperl. Beschwerden</h3><p>Begleitende Unterstützung bei Verspannungen, Schmerzen und körperlichem Unwohlsein.</p></div>
+      <div class="benefit-card reveal rd1"><span class="benefit-icon">🌱</span><h3>Selbstheilung</h3><p>Aktivierung der natürlichen Selbstheilungskräfte des Körpers und der Psyche.</p></div>
+      <div class="benefit-card reveal rd2"><span class="benefit-icon">☀️</span><h3>Energie & Lebensfreude</h3><p>Neue Kraft tanken – mehr Leichtigkeit und Vitalität im Alltag spüren.</p></div>
+      <div class="benefit-card reveal rd3"><span class="benefit-icon">🕊️</span><h3>Innere Ruhe</h3><p>Tiefes Ankommen bei sich selbst und Entwicklung innerer Stille und Gelassenheit.</p></div>
+      <div class="benefit-card reveal rd4"><span class="benefit-icon">🌊</span><h3>Herausford. Phasen</h3><p>Sanfte Begleitung in schwierigen Übergängen, Trauer und Veränderungen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:var(--green);">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,24 C360,0 1080,48 1440,16 L1440,48 L0,48 Z" fill="#F7F2EA"/></svg>
+</div>
+
+<!-- SITZUNG -->
+<section id="sitzung">
+  <div class="inner">
+    <div class="sitzung-head">
+      <span class="section-label reveal">Ablauf</span>
+      <h2 class="reveal rd1">Eine Sitzung bei mir</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step reveal">
+        <span class="step-num">01</span>
+        <span class="step-icon">🤝</span>
+        <h3>Ankommen & Gespräch</h3>
+        <p>Wir nehmen uns Zeit füreinander. Ich höre dir zu, beantworte deine Fragen und wir bereiten gemeinsam die Sitzung vor.</p>
+      </div>
+      <div class="step reveal rd1">
+        <span class="step-num">02</span>
+        <span class="step-icon">🙏</span>
+        <h3>Die Behandlung</h3>
+        <p>Du liegst bekleidet und bequem. Ich lege meine Hände sanft auf oder über verschiedene Körperstellen und folge dem Energiefluss.</p>
+      </div>
+      <div class="step reveal rd2">
+        <span class="step-num">03</span>
+        <span class="step-icon">🌙</span>
+        <h3>Nachklingen</h3>
+        <p>Nach der Behandlung nehmen wir uns Zeit zum Nachspüren. Du erzählst, was du erlebt hast – ich beantworte deine Fragen.</p>
+      </div>
+      <div class="step reveal rd3">
+        <span class="step-num">04</span>
+        <span class="step-icon">🌿</span>
+        <h3>Nächster Schritt</h3>
+        <p>Gemeinsam schauen wir, was dir gut getan hat und ob weitere Sitzungen sinnvoll wären. Jeder Weg ist individuell.</p>
+      </div>
+    </div>
+    <div class="disclaimer reveal">
+      <span style="font-size:1.3rem; flex-shrink:0; margin-top:2px;">ℹ️</span>
+      <p><strong>Wichtiger Hinweis:</strong> Reiki ist eine ergänzende Methode und kein Ersatz für schulmedizinische Diagnose oder Behandlung. Bei gesundheitlichen Beschwerden wenden Sie sich bitte an einen Arzt oder eine Ärztin.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div id="quote">
+  <div class="quote-inner reveal">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">Reiki bringt dich zurück in deine Mitte.</p>
+    <span class="quote-by">— Marlene Krinninger</span>
+  </div>
+</div>
+
+<!-- WAVE -->
+<div class="wave" style="background:var(--beige);">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,16 C480,40 960,8 1440,28 L1440,48 L0,48 Z" fill="#ffffff"/></svg>
+</div>
+
+<!-- ARBEITSWEISE -->
+<section id="arbeitsweise">
+  <div class="inner">
+    <div class="arbeitsweise-head">
+      <span class="section-label reveal">Meine Arbeitsweise</span>
+      <h2 class="reveal rd1">Was mich auszeichnet</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar reveal">
+        <span class="pillar-icon">🌍</span>
+        <h3>Ganzheitlich</h3>
+        <p>Ich sehe dich als ganzen Menschen – Körper, Geist und Seele bilden eine Einheit. Jede Sitzung berücksichtigt dich in deiner Vollständigkeit.</p>
+      </div>
+      <div class="pillar reveal rd2">
+        <span class="pillar-icon">💫</span>
+        <h3>Individuell</h3>
+        <p>Jede Sitzung ist auf dich abgestimmt. Ich folge dem, was dein Energiesystem braucht – ohne Schema, mit echtem Gespür.</p>
+      </div>
+      <div class="pillar reveal rd4">
+        <span class="pillar-icon">🕯️</span>
+        <h3>Achtsam</h3>
+        <p>Du bekommst einen geschützten Raum, in dem du dich vollständig fallen lassen kannst. Vertrauen und Würde stehen im Mittelpunkt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:var(--white);">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,32 C480,8 960,48 1440,20 L1440,48 L0,48 Z" fill="#F7F2EA"/></svg>
+</div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="inner">
+    <div class="faq-head">
+      <span class="section-label reveal">Häufige Fragen</span>
+      <h2 class="reveal rd1">FAQ</h2>
+    </div>
+    <div class="faq-list reveal rd2">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Muss ich an Reiki glauben, damit es wirkt?<span class="faq-ico">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Nein. Reiki wirkt unabhängig von Glauben oder Überzeugungen. Alles, was du mitbringen musst, ist Offenheit und die Bereitschaft, dich zu entspannen. Auch skeptische Menschen berichten häufig von positiven Erfahrungen.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Wie viele Sitzungen brauche ich?<span class="faq-ico">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Das ist sehr individuell. Für akute Themen können schon 1–3 Sitzungen spürbare Wirkung zeigen. Bei tieferen Anliegen empfehle ich anfangs 4–6 Sitzungen. Gemeinsam schauen wir, was für dich passt.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Was spüre ich während der Behandlung?<span class="faq-ico">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Die Erfahrungen sind sehr verschieden. Viele spüren Wärme, ein Kribbeln oder tiefe Entspannung. Manche sehen Farben, andere schlafen einfach ein. Es gibt kein „richtig" oder „falsch".</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Ist Reiki auch für Kinder geeignet?<span class="faq-ico">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Ja, Reiki ist für jedes Alter geeignet – auch für Kinder und Babys. Die Behandlung ist sanft und behutsam. Für Kinder unter 12 Jahren ist ein Elternteil während der Sitzung anwesend.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Wo findet die Behandlung statt?<span class="faq-ico">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Die Behandlung findet in meiner Praxis in Würding 8, 94496 Ortenburg statt – ein ruhiger, geborgener Raum für dein Wohlbefinden. Auf Anfrage sind auch Hausbesuche in der näheren Umgebung möglich.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Wie kann ich einen Termin vereinbaren?<span class="faq-ico">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Füll das <a href="kontakt.html">Kontaktformular</a> aus, ruf mich an unter +49 171 2020208 oder schreib mir an marlene.hajek2202@gmail.com. Ich melde mich zeitnah bei dir.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:var(--cream);">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,16 C360,48 1080,0 1440,32 L1440,48 L0,48 Z" fill="#3A5440"/></svg>
+</div>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+  <div class="inner">
+    <div class="kontakt-grid">
+      <div class="kontakt-info">
+        <span class="section-label reveal">Kontakt</span>
+        <h2 class="reveal rd1">Ich bin für dich da.</h2>
+        <div class="k-items">
+          <div class="k-item reveal rd2">
+            <div class="k-ico">📞</div>
+            <div><div class="k-label">Telefon</div><div class="k-val"><a href="tel:+491712020208">+49 171 2020208</a></div></div>
+          </div>
+          <div class="k-item reveal rd3">
+            <div class="k-ico">✉️</div>
+            <div><div class="k-label">E-Mail</div><div class="k-val"><a href="mailto:marlene.hajek2202@gmail.com">marlene.hajek2202@gmail.com</a></div></div>
+          </div>
+          <div class="k-item reveal rd4">
+            <div class="k-ico">📍</div>
+            <div><div class="k-label">Adresse</div><div class="k-val">Würding 8, 94496 Ortenburg</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="cta-box reveal rd2">
+        <span class="script-line">Bereit für deine erste Sitzung?</span>
+        <h3>Termin vereinbaren</h3>
+        <p>Schreib mir eine Nachricht oder ruf mich an. Ich freue mich auf dich und beantworte gerne all deine Fragen.</p>
+        <div class="cta-btns">
+          <a href="kontakt.html" class="btn btn-cream" style="justify-content:center;">Zum Kontaktformular</a>
+          <a href="tel:+491712020208" class="btn btn-outline-light" style="justify-content:center;">Direkt anrufen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:var(--green);">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,32 C360,16 1080,48 1440,24 L1440,48 L0,48 Z" fill="#2C4034"/></svg>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="f-name">Marlene Krinninger</div>
+      <div class="f-addr">Reiki-Behandlung · Würding 8, 94496 Ortenburg<br>+49 171 2020208 · marlene.hajek2202@gmail.com</div>
+    </div>
+    <nav class="footer-links">
+      <a href="kontakt.html">Kontakt</a>
+      <a href="kontakt.html#impressum">Impressum</a>
+      <a href="kontakt.html#datenschutz">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+
+  // Mobile menu
+  const ham = document.getElementById('hamburger');
+  const menu = document.getElementById('mobileMenu');
+  const close = document.getElementById('mobileClose');
+  const open = () => { menu.classList.add('open'); ham.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; };
+  const shut = () => { menu.classList.remove('open'); ham.setAttribute('aria-expanded','false'); document.body.style.overflow=''; };
+  ham.addEventListener('click', open);
+  close.addEventListener('click', shut);
+  document.querySelectorAll('.ml').forEach(l => l.addEventListener('click', shut));
+
+  // Tagline rotation
+  const tls = document.querySelectorAll('.hero-tagline');
+  let cur = 0;
+  setInterval(() => {
+    tls[cur].classList.remove('active');
+    cur = (cur + 1) % tls.length;
+    tls[cur].classList.add('active');
+  }, 3000);
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const ans = btn.nextElementSibling;
+      const isOpen = ans.classList.contains('open');
+      document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-q').forEach(b => { b.classList.remove('open'); b.setAttribute('aria-expanded','false'); });
+      if (!isOpen) { ans.classList.add('open'); btn.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+</script>
+</body>
+</html>
