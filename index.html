@@ -81,13 +81,13 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 20px 48px;
       display: flex; align-items: center; justify-content: space-between;
-      transition: background var(--t), padding var(--t), box-shadow var(--t);
-    }
-    #mainNav.scrolled {
+      transition: padding var(--t), box-shadow var(--t);
       background: rgba(247,242,234,0.96);
       backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-      padding: 12px 48px;
       box-shadow: 0 2px 24px rgba(58,84,64,0.08);
+    }
+    #mainNav.scrolled {
+      padding: 12px 48px;
     }
     .nav-logo { display: flex; flex-direction: column; line-height: 1.15; }
     .nav-logo-name { font-family: 'Dancing Script', cursive; font-size: 1.55rem; color: var(--green); font-weight: 700; }
