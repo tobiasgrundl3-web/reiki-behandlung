@@ -226,23 +226,6 @@
     }
     .quote-box .q-text { font-family: 'Dancing Script', cursive; font-size: 1.35rem; color: var(--cream); line-height: 1.5; }
 
-    /* IMPRESSUM / DATENSCHUTZ TABS */
-    .legal-section { padding: 0 0 80px; }
-    .tabs { display: flex; gap: 0; border-bottom: 2px solid var(--beige-dark); margin-bottom: 40px; }
-    .tab-btn {
-      padding: 14px 28px; background: none; border: none;
-      font-family: 'Lato', sans-serif; font-size: 0.82rem;
-      font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--text-muted); cursor: pointer; transition: color var(--t);
-      border-bottom: 2px solid transparent; margin-bottom: -2px;
-    }
-    .tab-btn.active { color: var(--green); border-bottom-color: var(--green); }
-    .tab-pane { display: none; }
-    .tab-pane.active { display: block; }
-    .legal-content h3 { font-size: 1.05rem; color: var(--green-dark); margin: 24px 0 8px; }
-    .legal-content h3:first-child { margin-top: 0; }
-    .legal-content p, .legal-content address { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; font-style: normal; margin-bottom: 10px; }
-    .legal-content a { color: var(--green); text-decoration: underline; }
 
     /* FOOTER */
     footer { background: var(--green-dark); padding: 36px 40px; }
@@ -356,7 +339,7 @@
 
           <div class="privacy-row">
             <input type="checkbox" id="datenschutz" name="datenschutz" required>
-            <label for="datenschutz">Ich habe die <a href="#datenschutz">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage verwendet werden. *</label>
+            <label for="datenschutz">Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage verwendet werden. *</label>
           </div>
 
           <button type="submit" class="btn btn-primary submit-btn">Anfrage senden →</button>
@@ -420,51 +403,6 @@
   </div>
 </div>
 
-<!-- IMPRESSUM / DATENSCHUTZ -->
-<div class="legal-section" id="legal">
-  <div class="inner">
-    <div class="tabs">
-      <button class="tab-btn active" data-tab="impressum" id="impressum">Impressum</button>
-      <button class="tab-btn" data-tab="datenschutz" id="datenschutz">Datenschutz</button>
-    </div>
-    <div class="tab-pane active" id="pane-impressum">
-      <div class="legal-content">
-        <h3>Angaben gemäß § 5 TMG</h3>
-        <address>
-          Marlene Krinninger<br>
-          Würding 8<br>
-          94496 Ortenburg<br><br>
-          Telefon: +49 171 2020208<br>
-          E-Mail: <a href="mailto:marlene.hajek2202@gmail.com">marlene.hajek2202@gmail.com</a>
-        </address>
-        <h3>Verantwortlich für den Inhalt</h3>
-        <p>Marlene Krinninger, Würding 8, 94496 Ortenburg</p>
-        <h3>Haftungsausschluss</h3>
-        <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir keine Gewähr. Reiki ist keine medizinische Behandlung und ersetzt keine ärztliche Diagnose oder Therapie.</p>
-        <h3>Urheberrecht</h3>
-        <p>Die auf dieser Website veröffentlichten Inhalte unterliegen dem deutschen Urheberrecht. Eine Vervielfältigung, Bearbeitung oder Verbreitung bedarf der schriftlichen Genehmigung der Autorin.</p>
-      </div>
-    </div>
-    <div class="tab-pane" id="pane-datenschutz">
-      <div class="legal-content">
-        <h3>Datenschutzerklärung</h3>
-        <p>Der Schutz Ihrer persönlichen Daten ist mir ein wichtiges Anliegen. Ich verarbeite Ihre Daten ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TMG).</p>
-        <h3>Verantwortliche Stelle</h3>
-        <address>
-          Marlene Krinninger · Würding 8 · 94496 Ortenburg<br>
-          E-Mail: <a href="mailto:marlene.hajek2202@gmail.com">marlene.hajek2202@gmail.com</a>
-        </address>
-        <h3>Kontaktformular</h3>
-        <p>Wenn Sie mir über das Kontaktformular eine Nachricht senden, werden die von Ihnen angegebenen Daten zur Bearbeitung Ihrer Anfrage und für den Fall von Anschlussfragen bei mir gespeichert. Diese Daten gebe ich nicht ohne Ihre Einwilligung weiter. Das Formular wird über Formspree (formspree.io) verarbeitet.</p>
-        <h3>Ihre Rechte</h3>
-        <p>Sie haben jederzeit das Recht auf Auskunft über Ihre gespeicherten Daten, deren Herkunft, Empfänger und den Zweck der Speicherung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Für Fragen wenden Sie sich bitte an: <a href="mailto:marlene.hajek2202@gmail.com">marlene.hajek2202@gmail.com</a></p>
-        <h3>Cookies</h3>
-        <p>Diese Website verwendet keine Tracking-Cookies. Es werden keine personenbezogenen Daten durch Cookies erhoben.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -474,8 +412,8 @@
     </div>
     <nav class="footer-links">
       <a href="index.html">Startseite</a>
-      <a href="#impressum">Impressum</a>
-      <a href="#datenschutz">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
     </nav>
   </div>
 </footer>
