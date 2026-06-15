@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kontakt – Marlene Krinninger Reiki-Behandlung</title>
   <meta name="description" content="Termin vereinbaren bei Marlene Krinninger – Reiki-Behandlung in Ortenburg.">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="apple-touch-icon" href="img/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
@@ -266,6 +268,12 @@
       .avail-grid { grid-template-columns: repeat(2,1fr); }
       .page-header { padding: 100px 0 64px; }
     }
+
+    /* NAV LOGO IMAGE */
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo-img { width: 46px; height: 46px; object-fit: contain; flex-shrink: 0; transition: transform 0.35s ease; }
+    .nav-logo:hover .nav-logo-img { transform: rotate(8deg) scale(1.05); }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.15; }
   </style>
 </head>
 <body>
@@ -273,8 +281,11 @@
 <!-- NAV -->
 <nav id="mainNav">
   <a href="index.html" class="nav-logo">
-    <span class="nav-logo-name">Marlene Krinninger</span>
-    <span class="nav-logo-sub">Reiki-Behandlung</span>
+    <img src="img/logo.png" alt="Marlene Krinninger Logo" class="nav-logo-img">
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Marlene Krinninger</span>
+      <span class="nav-logo-sub">Reiki-Behandlung</span>
+    </div>
   </a>
   <a href="index.html" class="nav-back">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
