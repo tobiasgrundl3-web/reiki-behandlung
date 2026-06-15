@@ -116,10 +116,6 @@
     }
     .mobile-menu.open { display: flex; }
     .mobile-menu .ml { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--green); }
-    .mobile-close {
-      position: absolute; top: 20px; right: 24px;
-      font-size: 2.2rem; background: none; border: none; color: var(--text); line-height: 1;
-    }
 
     /* HERO */
     #hero {
@@ -378,8 +374,7 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="mobileClose" aria-label="Schließen">×</button>
-  <a href="#reiki" class="ml">Reiki</a>
+<a href="#reiki" class="ml">Reiki</a>
   <a href="#wirkung" class="ml">Wirkung</a>
   <a href="#sitzung" class="ml">Sitzung</a>
   <a href="#arbeitsweise" class="ml">Über mich</a>
@@ -670,11 +665,10 @@
   // Mobile menu
   const ham = document.getElementById('hamburger');
   const menu = document.getElementById('mobileMenu');
-  const close = document.getElementById('mobileClose');
-  const open = () => { menu.classList.add('open'); ham.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; };
   const shut = () => { menu.classList.remove('open'); ham.setAttribute('aria-expanded','false'); document.body.style.overflow=''; };
-  ham.addEventListener('click', open);
-  close.addEventListener('click', shut);
+  const open = () => { menu.classList.add('open'); ham.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; };
+  ham.addEventListener('click', () => menu.classList.contains('open') ? shut() : open());
+  document.querySelector('.nav-logo').addEventListener('click', shut);
   document.querySelectorAll('.ml').forEach(l => l.addEventListener('click', shut));
 
   // Tagline rotation
