@@ -62,8 +62,8 @@
     }
     .btn-primary { background: var(--green); color: var(--cream); border-color: var(--green); }
     .btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 24px var(--shadow); }
-    .btn-outline { background: transparent; color: var(--green); border-color: var(--green); }
-    .btn-outline:hover { background: var(--green); color: var(--cream); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--cream); border-color: rgba(247,242,234,0.6); }
+    .btn-outline:hover { background: rgba(247,242,234,0.12); color: var(--cream); border-color: var(--cream); transform: translateY(-2px); }
     .btn-cream { background: var(--cream); color: var(--green); border-color: var(--cream); }
     .btn-cream:hover { background: var(--white); transform: translateY(-2px); }
     .btn-outline-light { background: transparent; color: var(--cream); border-color: rgba(247,242,234,0.45); }
@@ -124,29 +124,25 @@
     /* HERO */
     #hero {
       min-height: 100vh; display: flex; align-items: center;
-      padding-top: 80px; background: var(--cream); position: relative; overflow: hidden;
+      padding-top: 80px; position: relative; overflow: hidden;
+      background-image: url('img/hero.jpg');
+      background-size: cover;
+      background-position: center 40%;
     }
     #hero::before {
-      content: ''; position: absolute; top: -15%; right: -8%;
-      width: 580px; height: 580px;
-      background: radial-gradient(circle, rgba(196,149,106,0.09) 0%, transparent 70%);
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(44,64,52,0.82) 0%, rgba(44,64,52,0.55) 55%, rgba(44,64,52,0.28) 100%);
       pointer-events: none;
     }
-    #hero::after {
-      content: ''; position: absolute; bottom: 10%; left: -5%;
-      width: 380px; height: 380px;
-      background: radial-gradient(circle, rgba(58,84,64,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 0; align-items: center; max-width: 720px; }
     .hero-label { font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 20px; }
     .hero-headline {
       font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 600;
-      color: var(--green-dark); line-height: 1.2; margin-bottom: 24px;
+      color: var(--cream); line-height: 1.2; margin-bottom: 24px;
     }
     .hero-tagline-wrap { height: 44px; overflow: hidden; margin-bottom: 32px; position: relative; }
     .hero-tagline {
-      font-family: 'Dancing Script', cursive; font-size: 1.65rem; color: var(--gold);
+      font-family: 'Dancing Script', cursive; font-size: 1.65rem; color: rgba(247,242,234,0.88);
       opacity: 0; transform: translateY(14px);
       transition: opacity 0.55s ease, transform 0.55s ease;
       position: absolute; white-space: nowrap;
@@ -155,9 +151,9 @@
     .hero-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
     .hero-badge {
       padding: 6px 16px; border-radius: 50px;
-      border: 1px solid var(--beige-dark);
+      border: 1px solid rgba(247,242,234,0.35);
       font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--text-muted); font-weight: 700; background: rgba(255,255,255,0.5);
+      color: rgba(247,242,234,0.85); font-weight: 700; background: rgba(247,242,234,0.08);
     }
     .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
     .hero-visual { display: flex; align-items: center; justify-content: center; }
@@ -406,65 +402,7 @@
           <a href="#reiki" class="btn btn-outline">Mehr erfahren</a>
         </div>
       </div>
-      <div class="hero-visual reveal rd2">
-        <div class="tree-wrap">
-          <svg viewBox="0 0 260 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lebensbaum">
-            <!-- Roots -->
-            <path d="M130 248 Q106 268 82 275" stroke="#C4956A" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
-            <path d="M130 248 Q120 272 114 286" stroke="#C4956A" stroke-width="2.5" stroke-linecap="round" opacity="0.45"/>
-            <path d="M130 248 Q130 274 130 290" stroke="#C4956A" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
-            <path d="M130 248 Q140 272 146 286" stroke="#C4956A" stroke-width="2.5" stroke-linecap="round" opacity="0.45"/>
-            <path d="M130 248 Q154 266 178 273" stroke="#C4956A" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
-            <path d="M82 275 Q66 280 50 277" stroke="#C4956A" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
-            <path d="M178 273 Q194 277 210 274" stroke="#C4956A" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
-            <!-- Trunk -->
-            <path d="M130 248 C128 228 127 205 130 162" stroke="#3A5440" stroke-width="10" stroke-linecap="round"/>
-            <!-- Branches -->
-            <path d="M130 178 Q100 152 70 138" stroke="#3A5440" stroke-width="6" stroke-linecap="round"/>
-            <path d="M130 178 Q160 152 190 138" stroke="#3A5440" stroke-width="6" stroke-linecap="round"/>
-            <path d="M130 195 Q107 170 88 153" stroke="#3A5440" stroke-width="4.5" stroke-linecap="round"/>
-            <path d="M130 195 Q153 170 172 153" stroke="#3A5440" stroke-width="4.5" stroke-linecap="round"/>
-            <path d="M130 162 Q124 136 116 112" stroke="#3A5440" stroke-width="4" stroke-linecap="round"/>
-            <path d="M130 162 Q136 136 144 112" stroke="#3A5440" stroke-width="4" stroke-linecap="round"/>
-            <path d="M130 162 Q130 132 130 108" stroke="#3A5440" stroke-width="4" stroke-linecap="round"/>
-            <!-- Sub-branches -->
-            <path d="M70 138 Q55 125 44 120" stroke="#3A5440" stroke-width="3" stroke-linecap="round"/>
-            <path d="M70 138 Q63 123 60 112" stroke="#3A5440" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M190 138 Q205 125 216 120" stroke="#3A5440" stroke-width="3" stroke-linecap="round"/>
-            <path d="M190 138 Q197 123 200 112" stroke="#3A5440" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M88 153 Q74 138 66 130" stroke="#3A5440" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M172 153 Q186 138 194 130" stroke="#3A5440" stroke-width="2.5" stroke-linecap="round"/>
-            <!-- Leaf crown -->
-            <circle cx="130" cy="72" r="46" fill="#3A5440" opacity="0.11"/>
-            <circle cx="130" cy="68" r="34" fill="#3A5440" opacity="0.14"/>
-            <circle cx="97" cy="98" r="30" fill="#3A5440" opacity="0.12"/>
-            <circle cx="163" cy="98" r="30" fill="#3A5440" opacity="0.12"/>
-            <circle cx="66" cy="112" r="25" fill="#3A5440" opacity="0.1"/>
-            <circle cx="194" cy="112" r="25" fill="#3A5440" opacity="0.1"/>
-            <circle cx="112" cy="60" r="22" fill="#3A5440" opacity="0.13"/>
-            <circle cx="148" cy="60" r="22" fill="#3A5440" opacity="0.13"/>
-            <!-- Leaf tips -->
-            <circle cx="130" cy="48" r="5" fill="#3A5440" opacity="0.5"/>
-            <circle cx="113" cy="42" r="4" fill="#3A5440" opacity="0.4"/>
-            <circle cx="147" cy="42" r="4" fill="#3A5440" opacity="0.4"/>
-            <circle cx="97" cy="54" r="4" fill="#3A5440" opacity="0.35"/>
-            <circle cx="163" cy="54" r="4" fill="#3A5440" opacity="0.35"/>
-            <circle cx="82" cy="68" r="3.5" fill="#3A5440" opacity="0.3"/>
-            <circle cx="178" cy="68" r="3.5" fill="#3A5440" opacity="0.3"/>
-            <circle cx="52" cy="105" r="3" fill="#3A5440" opacity="0.24"/>
-            <circle cx="208" cy="105" r="3" fill="#3A5440" opacity="0.24"/>
-            <!-- Gold dots -->
-            <circle cx="130" cy="38" r="3.5" fill="#C4956A" opacity="0.65"/>
-            <circle cx="108" cy="34" r="2.5" fill="#C4956A" opacity="0.5"/>
-            <circle cx="152" cy="34" r="2.5" fill="#C4956A" opacity="0.5"/>
-            <circle cx="43" cy="115" r="2.5" fill="#C4956A" opacity="0.4"/>
-            <circle cx="217" cy="115" r="2.5" fill="#C4956A" opacity="0.4"/>
-            <!-- Energy center -->
-            <circle cx="130" cy="162" r="9" fill="none" stroke="#C4956A" stroke-width="1.5" opacity="0.4"/>
-            <circle cx="130" cy="162" r="4" fill="#C4956A" opacity="0.65"/>
-          </svg>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
