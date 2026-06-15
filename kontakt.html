@@ -104,6 +104,7 @@
     /* MAIN LAYOUT */
     .main-wrap { padding: 64px 0 80px; }
     .form-layout { display: grid; grid-template-columns: 1fr 380px; gap: 56px; align-items: start; }
+    .kontakt-top-mobile { display: none; }
 
     /* FORM CARD */
     .form-card {
@@ -257,7 +258,8 @@
       #mainNav { padding-left: 20px; padding-right: 20px; }
       .inner { padding: 0 20px; }
       .form-layout { grid-template-columns: 1fr; }
-      .sidebar { order: -1; }
+      .kontakt-top-mobile { display: block; }
+      .sidebar .sidebar-card:first-child { display: none; }
       .avail-grid { grid-template-columns: repeat(2,1fr); }
       footer { padding: 28px 20px; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
@@ -303,6 +305,25 @@
 <div class="main-wrap">
   <div class="inner">
     <div class="form-layout">
+
+      <!-- Direkter Kontakt – nur Mobil -->
+      <div class="sidebar-card kontakt-top-mobile reveal">
+        <h3>Direkter Kontakt</h3>
+        <div class="contact-list">
+          <div class="contact-row">
+            <div class="c-ico">📞</div>
+            <div><div class="c-label">Telefon</div><div class="c-val"><a href="tel:+491712020208">+49 171 2020208</a></div></div>
+          </div>
+          <div class="contact-row">
+            <div class="c-ico">✉️</div>
+            <div><div class="c-label">E-Mail</div><div class="c-val"><a href="mailto:marlene.hajek2202@gmail.com">marlene.hajek2202@gmail.com</a></div></div>
+          </div>
+          <div class="contact-row">
+            <div class="c-ico">📍</div>
+            <div><div class="c-label">Adresse</div><div class="c-val">Würding 8<br>94496 Ortenburg</div></div>
+          </div>
+        </div>
+      </div>
 
       <!-- FORM -->
       <div class="form-card reveal">
