@@ -75,13 +75,13 @@
     @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
     /* NAV */
-    nav {
+    #mainNav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 20px 48px;
       display: flex; align-items: center; justify-content: space-between;
       transition: background var(--t), padding var(--t), box-shadow var(--t);
     }
-    nav.scrolled {
+    #mainNav.scrolled {
       background: rgba(247,242,234,0.96);
       backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
       padding: 12px 48px;
@@ -317,7 +317,7 @@
       .steps-grid { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 900px) {
-      nav, nav.scrolled { padding-left: 24px; padding-right: 24px; }
+      nav, #mainNav.scrolled { padding-left: 24px; padding-right: 24px; }
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: flex; }
       section { padding: 68px 0; }
@@ -331,7 +331,7 @@
     }
     @media (max-width: 600px) {
       .inner { padding: 0 20px; }
-      nav, nav.scrolled { padding-left: 20px; padding-right: 20px; }
+      nav, #mainNav.scrolled { padding-left: 20px; padding-right: 20px; }
       .benefits-grid { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: 1fr; }
       section { padding: 56px 0; }
