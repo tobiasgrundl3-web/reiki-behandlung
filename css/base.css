@@ -144,7 +144,7 @@ footer { background: var(--green-dark); padding: 44px 48px; }
 
 /* ---------- Responsive Basis ---------- */
 @media (max-width: 900px) {
-  .nav-logo-img { width: 66px; height: 66px; }
+  .nav-logo-img { width: 54px; height: 54px; }
   #mainNav { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: none; padding-left: 24px; padding-right: 24px; }
   #mainNav.scrolled { background: rgba(247,242,234,0.96); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 2px 24px rgba(58,84,64,0.08); padding-left: 24px; padding-right: 24px; }
   .nav-links, .nav-cta { display: none; }
@@ -152,6 +152,7 @@ footer { background: var(--green-dark); padding: 44px 48px; }
   .inner { padding: 0 32px; }
 }
 @media (max-width: 600px) {
+  .nav-logo-img { width: 50px; height: 50px; }
   .inner { padding: 0 22px; }
   #mainNav, #mainNav.scrolled { padding-left: 20px; padding-right: 20px; }
   footer { padding: 36px 22px; }
