@@ -407,6 +407,7 @@
       .offer { padding: 36px 28px; }
     }
   </style>
+  <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
 
@@ -419,7 +420,7 @@
     <li><a href="pulsing.html">Holistic Pulsing</a></li>
     <li><a href="reiki.html">Reiki</a></li>
   </ul>
-  <a href="kontakt.html" class="btn btn-primary nav-cta">Termin vereinbaren</a>
+  <a href="mailto:marlene.hajek2202@gmail.com?subject=Terminanfrage" data-contact data-subject="Terminanfrage" class="btn btn-primary nav-cta">Termin vereinbaren</a>
   <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -429,7 +430,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <a href="pulsing.html" class="ml">Holistic Pulsing</a>
   <a href="reiki.html" class="ml">Reiki</a>
-  <a href="kontakt.html" class="btn btn-primary" style="margin-top:16px;">Termin vereinbaren</a>
+  <a href="mailto:marlene.hajek2202@gmail.com?subject=Terminanfrage" data-contact data-subject="Terminanfrage" class="btn btn-primary" style="margin-top:16px;">Termin vereinbaren</a>
 </div>
 
 <!-- HERO -->
@@ -445,7 +446,7 @@
           <p class="hero-tagline">Ruhe im Puls.</p>
         </div>
         <div class="hero-btns reveal rd3">
-          <a href="kontakt.html" class="btn btn-primary">Termin vereinbaren</a>
+          <a href="mailto:marlene.hajek2202@gmail.com?subject=Terminanfrage" data-contact data-subject="Terminanfrage" class="btn btn-primary">Termin vereinbaren</a>
           <a href="#angebote" class="btn btn-outline">Meine Angebote</a>
         </div>
       </div>
@@ -531,15 +532,19 @@
             <div class="k-ico">📍</div>
             <div><div class="k-label">Adresse</div><div class="k-val">Würding 8, 94496 Ortenburg</div></div>
           </div>
+          <div class="k-item reveal rd5">
+            <div class="k-ico">🗓️</div>
+            <div><div class="k-label">Termine</div><div class="k-val">Nur nach Vereinbarung, gerne auch am Wochenende</div></div>
+          </div>
         </div>
       </div>
       <div class="cta-box reveal rd2">
         <span class="script-line">Bereit für deine erste Sitzung?</span>
         <h3>Termin vereinbaren</h3>
-        <p>Schreib mir eine Nachricht oder ruf mich an. Ich freue mich auf dich und beantworte gerne all deine Fragen.</p>
+        <p>Schreib mir eine Nachricht oder ruf mich an. Termine gibt es nur nach Vereinbarung, gerne auch am Wochenende. Ich freue mich auf dich und beantworte gerne all deine Fragen.</p>
         <div class="cta-btns">
-          <a href="kontakt.html" class="btn btn-cream" style="justify-content:center;">Zum Kontaktformular</a>
-          <a href="tel:+491712020208" class="btn btn-outline-light" style="justify-content:center;">Direkt anrufen</a>
+          <a href="tel:+491712020208" class="btn btn-cream" style="justify-content:center;">Anrufen</a>
+          <a href="mailto:marlene.hajek2202@gmail.com?subject=Terminanfrage" class="btn btn-outline-light" style="justify-content:center;">E-Mail schreiben</a>
         </div>
       </div>
     </div>
@@ -560,7 +565,7 @@
     <nav class="footer-links">
       <a href="pulsing.html">Holistic Pulsing</a>
       <a href="reiki.html">Reiki</a>
-      <a href="kontakt.html">Kontakt</a>
+      <a href="#kontakt">Kontakt</a>
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
     </nav>
@@ -596,5 +601,6 @@
     tls[cur].classList.add('active');
   }, 3000);
 </script>
+<script src="js/contact.js" defer></script>
 </body>
 </html>

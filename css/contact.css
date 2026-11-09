@@ -1,0 +1,30 @@
+/* Kontaktauswahl (Anrufen oder E-Mail) für alle "Termin"-Buttons */
+dialog.contact-dialog {
+  border: none; padding: 0; border-radius: 22px; width: calc(100% - 32px); max-width: 440px;
+  background: var(--cream, #F7F2EA); color: var(--text, #3C3530);
+  box-shadow: 0 30px 80px rgba(20, 35, 25, 0.38); margin: auto; overflow: visible;
+}
+dialog.contact-dialog::backdrop { background: rgba(28, 44, 34, 0.58); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
+.cd-inner { position: relative; padding: 40px 30px 30px; text-align: center; }
+.cd-close {
+  position: absolute; top: 8px; right: 8px; width: 44px; height: 44px; border: none; background: none;
+  font-size: 1.7rem; line-height: 1; color: var(--text-muted, #625850); border-radius: 50%; cursor: pointer;
+}
+.cd-close:hover { color: var(--green, #3A5440); background: rgba(58, 84, 64, 0.08); }
+.cd-label { font-family: 'Lato', sans-serif; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-text, #8F6038); font-weight: 700; margin-bottom: 10px; display: block; }
+.cd-title { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 600; color: var(--green-dark, #2C4034); line-height: 1.25; margin-bottom: 10px; }
+.cd-text { color: var(--text-muted, #625850); font-size: 0.98rem; line-height: 1.6; margin-bottom: 24px; }
+.cd-actions { display: flex; flex-direction: column; gap: 12px; }
+.cd-btn {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  min-height: 62px; padding: 12px 20px; border-radius: 16px; border: 2px solid var(--green, #3A5440);
+  font-family: 'Lato', sans-serif; text-decoration: none; transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+.cd-btn strong { font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.cd-btn span { font-size: 0.95rem; }
+.cd-call { background: var(--green, #3A5440); color: var(--cream, #F7F2EA); }
+.cd-call:hover { background: var(--green-dark, #2C4034); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(58, 84, 64, 0.2); }
+.cd-mail { background: transparent; color: var(--green, #3A5440); }
+.cd-mail:hover { background: var(--green, #3A5440); color: var(--cream, #F7F2EA); transform: translateY(-2px); }
+.cd-btn:focus-visible, .cd-close:focus-visible { outline: 2px solid var(--gold, #C4956A); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .cd-btn { transition: none; } }
