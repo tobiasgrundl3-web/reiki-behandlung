@@ -28,3 +28,22 @@ dialog.contact-dialog::backdrop { background: rgba(28, 44, 34, 0.58); -webkit-ba
 .cd-mail:hover { background: var(--green, #3A5440); color: var(--cream, #F7F2EA); transform: translateY(-2px); }
 .cd-btn:focus-visible, .cd-close:focus-visible { outline: 2px solid var(--gold, #C4956A); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { .cd-btn { transition: none; } }
+
+/* Fester Anruf-Button unten links, nur auf dem Handy */
+.call-fab { display: none; }
+@media (max-width: 767px) {
+  .call-fab {
+    position: fixed; left: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 90;
+    display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 22px 0 18px;
+    border-radius: 999px; background: var(--green, #3A5440); color: var(--cream, #F7F2EA);
+    font-family: 'Lato', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    box-shadow: 0 10px 28px rgba(28, 44, 34, 0.35), 0 0 0 3px rgba(247, 242, 234, 0.9);
+    animation: fabIn 0.6s ease 1s both; -webkit-tap-highlight-color: transparent;
+  }
+  .call-fab svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .call-fab:active { transform: scale(0.97); }
+  /* Platz im Footer, damit der Button keinen Text verdeckt */
+  footer { padding-bottom: 96px; }
+}
+@keyframes fabIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .call-fab { animation: none; } }
