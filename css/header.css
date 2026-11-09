@@ -1,0 +1,53 @@
+/* ============ HEADER (gemeinsam für alle Seiten, einzige Quelle) ============ */
+#mainNav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 10px 48px; display: flex; align-items: center; justify-content: space-between;
+  transition: padding 0.35s ease, box-shadow 0.35s ease;
+  background: rgba(247, 242, 234, 0.96);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  box-shadow: 0 2px 24px rgba(58, 84, 64, 0.08);
+}
+#mainNav.scrolled { padding: 7px 48px; }
+.nav-logo { display: flex; align-items: center; gap: 10px; }
+.nav-logo-img { width: 90px; height: 90px; object-fit: contain; flex-shrink: 0; transition: transform 0.35s ease; }
+.nav-logo:hover .nav-logo-img { transform: rotate(8deg) scale(1.05); }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; margin: 0; padding: 0; }
+.nav-links a {
+  font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700;
+  color: var(--text, #3C3530); position: relative; transition: color 0.35s ease;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px;
+  background: var(--gold, #C4956A); transform: scaleX(0); transition: transform 0.35s ease; transform-origin: center;
+}
+.nav-links a:hover { color: var(--green, #3A5440); }
+.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+.nav-links a.active { color: var(--green, #3A5440); }
+.nav-cta { display: inline-flex; align-items: center; justify-content: center; margin-left: 12px; padding: 10px 22px !important; font-size: 0.78rem !important; min-height: 0 !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 10px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--green, #3A5440); border-radius: 2px; transition: 0.35s ease; }
+.mobile-menu {
+  display: none; position: fixed; inset: 0; background: var(--cream, #F7F2EA); z-index: 99;
+  flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu .ml { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--green, #3A5440); }
+.mobile-menu .ml.active { color: var(--gold-text, #8F6038); }
+.mobile-menu .btn { padding: 14px 30px; min-height: 48px; }
+
+/* Mobil und Tablet: Logo und Menü-Symbol, durchsichtig bis zum ersten Scrollen */
+@media (max-width: 900px) {
+  #mainNav, #mainNav.scrolled { padding-left: 24px; padding-right: 24px; }
+  #mainNav { background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: none; }
+  #mainNav.scrolled { background: rgba(247, 242, 234, 0.96); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 2px 24px rgba(58, 84, 64, 0.08); }
+  .nav-logo-img { width: 65px; height: 65px; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  /* auf dunklem Seitenanfang hell darstellen, solange noch nicht gescrollt wurde */
+  .hero-dark #mainNav:not(.scrolled) .hamburger span { background: var(--cream, #F7F2EA); }
+  /* bei geöffnetem Menü (heller Grund) wieder dunkel, damit das Symbol sichtbar bleibt */
+  body:has(.mobile-menu.open) #mainNav .hamburger span { background: var(--green, #3A5440); }
+}
+@media (max-width: 600px) {
+  #mainNav, #mainNav.scrolled { padding-left: 20px; padding-right: 20px; }
+}

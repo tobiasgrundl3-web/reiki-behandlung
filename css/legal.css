@@ -1,0 +1,13 @@
+/* ============ Rechtsseiten (Impressum, Datenschutz) ============ */
+.page-header { background: var(--green); padding: 130px 0 64px; text-align: center; position: relative; overflow: hidden; }
+.page-header::before { content: ''; position: absolute; top: -20%; left: -5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(196,149,106,0.1) 0%, transparent 65%); }
+.header-label { font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: #E9CDB0; font-weight: 700; display: block; margin-bottom: 12px; }
+.header-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--cream); }
+.content-wrap { max-width: 780px; margin: 0 auto; padding: 64px 40px 80px; }
+.legal-content h3 { font-size: 1.15rem; color: var(--green-dark); margin: 32px 0 10px; padding-bottom: 8px; border-bottom: 1px solid var(--beige-dark); }
+.legal-content h3:first-child { margin-top: 0; }
+.legal-content p, .legal-content address { font-size: 0.95rem; color: var(--text-muted); line-height: 1.75; font-style: normal; margin-bottom: 8px; }
+.legal-content a { color: var(--green); text-decoration: underline; }
+.legal-content ul { margin: 4px 0 12px 20px; list-style: disc; color: var(--text-muted); font-size: 0.95rem; line-height: 1.75; }
+.legal-content li { margin-bottom: 4px; }
+@media (max-width: 600px) { .page-header { padding: 120px 0 52px; } .content-wrap { padding: 48px 20px 60px; } }
