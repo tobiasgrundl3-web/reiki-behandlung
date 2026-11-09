@@ -1,10 +1,10 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marlene Krinninger – Reiki-Behandlung Ortenburg</title>
-  <meta name="description" content="Reiki-Behandlung bei Marlene Krinninger in Ortenburg. Ganzheitlich, sanft, wirksam.">
+  <title>Marlene Krinninger – Holistic Pulsing &amp; Reiki in Ortenburg</title>
+  <meta name="description" content="Holistic Pulsing und Reiki bei Marlene Krinninger in Ortenburg. Ganzheitlich, sanft, wirksam.">
   <link rel="icon" type="image/png" href="img/logo.png">
   <link rel="apple-touch-icon" href="img/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -306,7 +306,7 @@
     .footer-inner { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
     .footer-brand .f-name { font-family: 'Dancing Script', cursive; font-size: 1.3rem; color: var(--cream); margin-bottom: 4px; }
     .footer-brand .f-addr { font-size: 0.8rem; color: rgba(247,242,234,0.55); line-height: 1.5; }
-    .footer-links { display: flex; gap: 22px; }
+    .footer-links { display: flex; gap: 10px 22px; flex-wrap: wrap; }
     .footer-links a { font-size: 0.78rem; letter-spacing: 0.1em; color: rgba(247,242,234,0.45); transition: color var(--t); }
     .footer-links a:hover { color: var(--gold); }
 
@@ -350,21 +350,74 @@
     .nav-logo-img { width: 90px; height: 90px; object-fit: contain; flex-shrink: 0; transition: transform 0.35s ease; }
     .nav-logo:hover .nav-logo-img { transform: rotate(8deg) scale(1.05); }
     .nav-logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+  
+    /* NAV ACTIVE */
+    .nav-links a.active { color: var(--green); }
+    .nav-links a.active::after { transform: scaleX(1); }
+    .mobile-menu .ml.active { color: var(--gold); }
+
+    /* HOME HERO (kompakter) */
+    #hero.home-hero { min-height: 78vh; }
+    .home-hero .hero-grid { max-width: 760px; }
+
+    /* MARLENE */
+    #marlene { background: var(--white); }
+    .marlene-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 64px; align-items: center; }
+    .marlene-photo {
+      aspect-ratio: 4 / 5; border-radius: var(--radius); overflow: hidden;
+      background: var(--beige); border: 2px dashed var(--beige-dark);
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      color: var(--text-muted); font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 24px;
+    }
+    .marlene-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .marlene-text h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); color: var(--green-dark); margin-bottom: 8px; }
+    .marlene-sub { font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: var(--gold); display: block; margin-bottom: 22px; }
+    .marlene-text p { color: var(--text-muted); margin-bottom: 16px; }
+
+    /* ANGEBOTE 60 / 40 */
+    #angebote { background: var(--cream); }
+    .angebote-head { text-align: center; margin-bottom: 56px; }
+    .angebote-head h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); color: var(--green-dark); }
+    .angebote-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 28px; align-items: stretch; }
+    .offer {
+      border-radius: var(--radius); padding: 48px 40px;
+      display: flex; flex-direction: column; align-items: flex-start;
+      transition: transform var(--t), box-shadow var(--t);
+    }
+    .offer:hover { transform: translateY(-6px); box-shadow: 0 16px 40px var(--shadow); }
+    .offer .offer-label { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 700; margin-bottom: 14px; }
+    .offer h3 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); margin-bottom: 8px; }
+    .offer .offer-script { font-family: 'Dancing Script', cursive; font-size: 1.45rem; margin-bottom: 20px; }
+    .offer p { font-size: 0.98rem; line-height: 1.75; margin-bottom: 26px; }
+    .offer .btn { margin-top: auto; }
+    .offer-main { background: var(--green); color: var(--cream); }
+    .offer-main .offer-label, .offer-main .offer-script { color: var(--gold); }
+    .offer-main h3 { color: var(--cream); }
+    .offer-main p { color: rgba(247,242,234,0.78); }
+    .offer-second { background: var(--white); border-top: 3px solid var(--gold); }
+    .offer-second .offer-label, .offer-second .offer-script { color: var(--gold); }
+    .offer-second h3 { color: var(--green-dark); }
+    .offer-second p { color: var(--text-muted); }
+
+    @media (max-width: 900px) {
+      .marlene-grid { grid-template-columns: 1fr; gap: 36px; }
+      .marlene-photo { max-width: 360px; margin: 0 auto; width: 100%; }
+      .angebote-grid { grid-template-columns: 1fr; }
+      .offer { padding: 36px 28px; }
+    }
   </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a href="#hero" class="nav-logo">
+  <a href="index.html" class="nav-logo">
     <img src="img/logo.png" alt="Marlene Krinninger Logo" class="nav-logo-img">
   </a>
   <ul class="nav-links">
-    <li><a href="#reiki">Reiki</a></li>
-    <li><a href="#wirkung">Wirkung</a></li>
-    <li><a href="#sitzung">Sitzung</a></li>
-    <li><a href="#arbeitsweise">Über mich</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="pulsing.html">Holistic Pulsing</a></li>
+    <li><a href="reiki.html">Reiki</a></li>
   </ul>
   <a href="kontakt.html" class="btn btn-primary nav-cta">Termin vereinbaren</a>
   <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
@@ -374,230 +427,86 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-<a href="#reiki" class="ml">Reiki</a>
-  <a href="#wirkung" class="ml">Wirkung</a>
-  <a href="#sitzung" class="ml">Sitzung</a>
-  <a href="#arbeitsweise" class="ml">Über mich</a>
-  <a href="#faq" class="ml">FAQ</a>
+  <a href="pulsing.html" class="ml">Holistic Pulsing</a>
+  <a href="reiki.html" class="ml">Reiki</a>
   <a href="kontakt.html" class="btn btn-primary" style="margin-top:16px;">Termin vereinbaren</a>
 </div>
 
 <!-- HERO -->
-<section id="hero">
+<section id="hero" class="home-hero">
   <div class="inner">
     <div class="hero-grid">
       <div class="hero-content">
-        <p class="hero-label reveal">Reiki-Behandlung · Ortenburg</p>
-        <h1 class="hero-headline reveal rd1">Energie, die fließt.<br>Heilung, die berührt.</h1>
+        <p class="hero-label reveal">Marlene Krinninger · Ortenburg</p>
+        <h1 class="hero-headline reveal rd1">Berührt werden.<br>Loslassen.<br>Bei dir ankommen.</h1>
         <div class="hero-tagline-wrap reveal rd2">
-          <p class="hero-tagline active" id="tl0">Entspannung, die bleibt.</p>
-          <p class="hero-tagline" id="tl1">Balance, die trägt.</p>
-          <p class="hero-tagline" id="tl2">Ein Weg zurück zu dir.</p>
+          <p class="hero-tagline active">Holistic Pulsing &amp; Reiki</p>
+          <p class="hero-tagline">Ganzheitlich. Sanft. Wirksam.</p>
+          <p class="hero-tagline">Ruhe im Puls.</p>
         </div>
-        <div class="hero-badges reveal rd3">
-          <span class="hero-badge">Ganzheitlich</span>
-          <span class="hero-badge">Sanft</span>
-          <span class="hero-badge">Wirksam</span>
-        </div>
-        <div class="hero-btns reveal rd4">
+        <div class="hero-btns reveal rd3">
           <a href="kontakt.html" class="btn btn-primary">Termin vereinbaren</a>
-          <a href="#reiki" class="btn btn-outline">Mehr erfahren</a>
+          <a href="#angebote" class="btn btn-outline">Meine Angebote</a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- WAVE -->
 <div class="wave" style="background:var(--cream);">
   <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,32 C360,48 1080,16 1440,32 L1440,48 L0,48 Z" fill="#ffffff"/></svg>
 </div>
 
-<!-- WAS IST REIKI -->
-<section id="reiki">
+<!-- MARLENE -->
+<section id="marlene">
   <div class="inner">
-    <div class="reiki-grid">
-      <div class="reiki-photo-col reveal">
-        <img src="img/lebensbaum.jpg" alt="Lebensbaum mit Sonnenstrahlen">
+    <div class="marlene-grid">
+      <div class="marlene-photo reveal">
+        <!-- Foto einsetzen: <img src="img/marlene.jpg" alt="Marlene Krinninger"> -->
+        <span>Foto von Marlene<br>folgt</span>
       </div>
-      <div class="reiki-text">
-        <span class="section-label reveal">Was ist Reiki?</span>
-        <h2 class="reveal rd1">Heilenergie durch sanfte Berührung</h2>
-        <p class="reveal rd2">Reiki ist eine japanische Methode zur Stressbewältigung und Entspannung, die auch die Förderung der Heilung unterstützt. Das Wort <em>Reiki</em> setzt sich aus <em>Rei</em> (universell) und <em>Ki</em> (Lebensenergie) zusammen.</p>
-        <p class="reveal rd3">Entwickelt Anfang des 20. Jahrhunderts von Mikao Usui, wird Reiki durch sanftes Auflegen der Hände auf oder über den Körper praktiziert. Ziel ist es, den natürlichen Energiefluss zu unterstützen und Blockaden zu lösen.</p>
-        <p class="reveal rd4">Reiki wirkt auf körperlicher, emotionaler und geistiger Ebene – sanft, nicht-invasiv und ohne Nebenwirkungen. Es kann als wertvolle Ergänzung zur schulmedizinischen Behandlung eingesetzt werden.</p>
-      </div>
-      <div class="facts-card reveal rd2">
-        <h3>Wissenswertes über Reiki</h3>
-        <div class="fact-row"><span class="fact-label">Ursprung</span><span class="fact-val">Japan, frühes 20. Jh. (Mikao Usui)</span></div>
-        <div class="fact-row"><span class="fact-label">Methode</span><span class="fact-val">Sanfte Handauflegung auf Energiepunkte</span></div>
-        <div class="fact-row"><span class="fact-label">Dauer</span><span class="fact-val">60–90 Minuten pro Sitzung</span></div>
-        <div class="fact-row"><span class="fact-label">Wirkung</span><span class="fact-val">Entspannung, Energiefluss, Selbstheilung</span></div>
-        <div class="fact-row"><span class="fact-label">Kleidung</span><span class="fact-val">Bekleidet – keine Entkleidung nötig</span></div>
-        <div class="fact-row"><span class="fact-label">Verbreitung</span><span class="fact-val">Weltweit in über 100 Ländern praktiziert</span></div>
+      <div class="marlene-text">
+        <span class="section-label reveal">Über mich</span>
+        <h2 class="reveal rd1">Marlene Krinninger</h2>
+        <span class="marlene-sub reveal rd1">Zeit für dich. Raum für Heilung.</span>
+        <p class="reveal rd2">Ich begleite dich mit Holistic Pulsing und Reiki dabei, zur Ruhe zu kommen, loszulassen und wieder bei dir anzukommen.</p>
+        <p class="reveal rd3">Dabei sehe ich dich als ganzen Menschen: Körper, Geist und Seele gehören zusammen. Jede Sitzung stimme ich auf dich und deine Bedürfnisse ab, in einem geschützten Raum, in dem du dich fallen lassen darfst.</p>
+        <p class="reveal rd4">Meine Praxis findest du in Würding bei Ortenburg.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WAVE -->
 <div class="wave" style="background:var(--white);">
-  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,16 C480,48 960,0 1440,24 L1440,48 L0,48 Z" fill="#3A5440"/></svg>
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,16 C480,48 960,0 1440,24 L1440,48 L0,48 Z" fill="#F7F2EA"/></svg>
 </div>
 
-<!-- WIRKUNG -->
-<section id="wirkung">
+<!-- ANGEBOTE -->
+<section id="angebote">
   <div class="inner">
-    <div class="wirkung-head">
-      <span class="section-label reveal">Anwendungsgebiete</span>
-      <h2 class="reveal rd1">Reiki kann unterstützen bei …</h2>
-      <p class="reveal rd2">Reiki begleitet dich auf deinem Weg zu mehr Wohlbefinden – körperlich, emotional und seelisch.</p>
+    <div class="angebote-head">
+      <span class="section-label reveal">Meine Angebote</span>
+      <h2 class="reveal rd1">Zwei Wege zu mehr Balance</h2>
     </div>
-    <div class="benefits-grid">
-      <div class="benefit-card reveal"><span class="benefit-icon">🌿</span><h3>Stressabbau</h3><p>Tiefe Entspannung und Loslassen von angesammeltem Stress und innerer Anspannung.</p></div>
-      <div class="benefit-card reveal rd1"><span class="benefit-icon">🔓</span><h3>Innere Blockaden</h3><p>Sanfte Auflösung emotionaler und energetischer Blockaden, die dich einengen.</p></div>
-      <div class="benefit-card reveal rd2"><span class="benefit-icon">✨</span><h3>Immunsystem</h3><p>Stärkung der körpereigenen Abwehrkräfte und Unterstützung der Selbstregulation.</p></div>
-      <div class="benefit-card reveal rd3"><span class="benefit-icon">💚</span><h3>Körperl. Beschwerden</h3><p>Begleitende Unterstützung bei Verspannungen, Schmerzen und körperlichem Unwohlsein.</p></div>
-      <div class="benefit-card reveal rd1"><span class="benefit-icon">🌱</span><h3>Selbstheilung</h3><p>Aktivierung der natürlichen Selbstheilungskräfte des Körpers und der Psyche.</p></div>
-      <div class="benefit-card reveal rd2"><span class="benefit-icon">☀️</span><h3>Energie & Lebensfreude</h3><p>Neue Kraft tanken – mehr Leichtigkeit und Vitalität im Alltag spüren.</p></div>
-      <div class="benefit-card reveal rd3"><span class="benefit-icon">🕊️</span><h3>Innere Ruhe</h3><p>Tiefes Ankommen bei sich selbst und Entwicklung innerer Stille und Gelassenheit.</p></div>
-      <div class="benefit-card reveal rd4"><span class="benefit-icon">🌊</span><h3>Herausford. Phasen</h3><p>Sanfte Begleitung in schwierigen Übergängen, Trauer und Veränderungen.</p></div>
+    <div class="angebote-grid">
+      <article class="offer offer-main reveal">
+        <span class="offer-label">Holistic Pulsing</span>
+        <h3>Berührung, die bewegt.</h3>
+        <span class="offer-script">Körper. Geist. Seele. In Einklang.</span>
+        <p>Holistic Pulsing ist eine sanfte, rhythmische Behandlungsmethode, die den Körper in Schwingung versetzt und tiefe Entspannung ermöglicht. Durch sanfte Impulse werden die Selbstregulation und die körpereigenen Ressourcen aktiviert.</p>
+        <a href="pulsing.html" class="btn btn-cream">Mehr zu Holistic Pulsing</a>
+      </article>
+      <article class="offer offer-second reveal rd2">
+        <span class="offer-label">Reiki</span>
+        <h3>Energie, die fließt.</h3>
+        <span class="offer-script">Entspannung, die bleibt.</span>
+        <p>Reiki ist eine sanfte, japanische Methode zur Aktivierung der Selbstheilungskräfte. Durch behutsame Handauflegung kommt der Energiefluss zurück in Balance.</p>
+        <a href="reiki.html" class="btn btn-primary">Mehr zu Reiki</a>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- WAVE -->
-<div class="wave" style="background:var(--green);">
-  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,24 C360,0 1080,48 1440,16 L1440,48 L0,48 Z" fill="#F7F2EA"/></svg>
-</div>
-
-<!-- SITZUNG -->
-<section id="sitzung">
-  <div class="inner">
-    <div class="sitzung-head">
-      <span class="section-label reveal">Ablauf</span>
-      <h2 class="reveal rd1">Eine Sitzung bei mir</h2>
-    </div>
-    <div class="sitzung-feature reveal">
-      <img src="img/behandlung1.jpg" alt="Reiki Behandlung">
-    </div>
-    <div class="steps-grid">
-      <div class="step reveal">
-        <span class="step-num">01</span>
-        <span class="step-icon">🤝</span>
-        <h3>Ankommen & Gespräch</h3>
-        <p>Wir nehmen uns Zeit füreinander. Ich höre dir zu, beantworte deine Fragen und wir bereiten gemeinsam die Sitzung vor.</p>
-      </div>
-      <div class="step reveal rd1">
-        <span class="step-num">02</span>
-        <span class="step-icon">🙏</span>
-        <h3>Die Behandlung</h3>
-        <p>Du liegst bekleidet und bequem. Ich lege meine Hände sanft auf oder über verschiedene Körperstellen und folge dem Energiefluss.</p>
-      </div>
-      <div class="step reveal rd2">
-        <span class="step-num">03</span>
-        <span class="step-icon">🌙</span>
-        <h3>Nachklingen</h3>
-        <p>Nach der Behandlung nehmen wir uns Zeit zum Nachspüren. Du erzählst, was du erlebt hast – ich beantworte deine Fragen.</p>
-      </div>
-      <div class="step reveal rd3">
-        <span class="step-num">04</span>
-        <span class="step-icon">🌿</span>
-        <h3>Nächster Schritt</h3>
-        <p>Gemeinsam schauen wir, was dir gut getan hat und ob weitere Sitzungen sinnvoll wären. Jeder Weg ist individuell.</p>
-      </div>
-    </div>
-    <div class="disclaimer reveal">
-      <span style="font-size:1.3rem; flex-shrink:0; margin-top:2px;">ℹ️</span>
-      <p><strong>Wichtiger Hinweis:</strong> Reiki ist eine ergänzende Methode und kein Ersatz für schulmedizinische Diagnose oder Behandlung. Bei gesundheitlichen Beschwerden wenden Sie sich bitte an einen Arzt oder eine Ärztin.</p>
-    </div>
-  </div>
-</section>
-
-<!-- QUOTE -->
-<div id="quote">
-  <div class="quote-inner reveal">
-    <span class="quote-mark">"</span>
-    <p class="quote-text">Reiki bringt dich zurück in deine Mitte.</p>
-    <span class="quote-by">— Marlene Krinninger</span>
-  </div>
-</div>
-
-<!-- WAVE -->
-<div class="wave" style="background:var(--beige);">
-  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,16 C480,40 960,8 1440,28 L1440,48 L0,48 Z" fill="#ffffff"/></svg>
-</div>
-
-<!-- ARBEITSWEISE -->
-<section id="arbeitsweise">
-  <div class="inner">
-    <div class="arbeitsweise-head">
-      <span class="section-label reveal">Meine Arbeitsweise</span>
-      <h2 class="reveal rd1">Was mich auszeichnet</h2>
-    </div>
-    <div class="pillars-grid">
-      <div class="pillar reveal">
-        <span class="pillar-icon">🌍</span>
-        <h3>Ganzheitlich</h3>
-        <p>Ich sehe dich als ganzen Menschen – Körper, Geist und Seele bilden eine Einheit. Jede Sitzung berücksichtigt dich in deiner Vollständigkeit.</p>
-      </div>
-      <div class="pillar reveal rd2">
-        <span class="pillar-icon">💫</span>
-        <h3>Individuell</h3>
-        <p>Jede Sitzung ist auf dich abgestimmt. Ich folge dem, was dein Energiesystem braucht – ohne Schema, mit echtem Gespür.</p>
-      </div>
-      <div class="pillar reveal rd4">
-        <span class="pillar-icon">🕯️</span>
-        <h3>Achtsam</h3>
-        <p>Du bekommst einen geschützten Raum, in dem du dich vollständig fallen lassen kannst. Vertrauen und Würde stehen im Mittelpunkt.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WAVE -->
-<div class="wave" style="background:var(--white);">
-  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,32 C480,8 960,48 1440,20 L1440,48 L0,48 Z" fill="#F7F2EA"/></svg>
-</div>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="inner">
-    <div class="faq-head">
-      <span class="section-label reveal">Häufige Fragen</span>
-      <h2 class="reveal rd1">FAQ</h2>
-    </div>
-    <div class="faq-list reveal rd2">
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Muss ich an Reiki glauben, damit es wirkt?<span class="faq-ico">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Nein. Reiki wirkt unabhängig von Glauben oder Überzeugungen. Alles, was du mitbringen musst, ist Offenheit und die Bereitschaft, dich zu entspannen. Auch skeptische Menschen berichten häufig von positiven Erfahrungen.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Wie viele Sitzungen brauche ich?<span class="faq-ico">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Das ist sehr individuell. Für akute Themen können schon 1–3 Sitzungen spürbare Wirkung zeigen. Bei tieferen Anliegen empfehle ich anfangs 4–6 Sitzungen. Gemeinsam schauen wir, was für dich passt.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Was spüre ich während der Behandlung?<span class="faq-ico">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Die Erfahrungen sind sehr verschieden. Viele spüren Wärme, ein Kribbeln oder tiefe Entspannung. Manche sehen Farben, andere schlafen einfach ein. Es gibt kein „richtig" oder „falsch".</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Ist Reiki auch für Kinder geeignet?<span class="faq-ico">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Ja, Reiki ist für jedes Alter geeignet – auch für Kinder und Babys. Die Behandlung ist sanft und behutsam. Für Kinder unter 12 Jahren ist ein Elternteil während der Sitzung anwesend.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Wo findet die Behandlung statt?<span class="faq-ico">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Die Behandlung findet in meiner Praxis in Würding 8, 94496 Ortenburg statt – ein ruhiger, geborgener Raum für dein Wohlbefinden. Auf Anfrage sind auch Hausbesuche in der näheren Umgebung möglich.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Wie kann ich einen Termin vereinbaren?<span class="faq-ico">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Füll das <a href="kontakt.html">Kontaktformular</a> aus, ruf mich an unter +49 171 2020208 oder schreib mir an marlene.hajek2202@gmail.com. Ich melde mich zeitnah bei dir.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WAVE -->
 <div class="wave" style="background:var(--cream);">
   <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,16 C360,48 1080,0 1440,32 L1440,48 L0,48 Z" fill="#3A5440"/></svg>
 </div>
@@ -637,7 +546,6 @@
   </div>
 </section>
 
-<!-- WAVE -->
 <div class="wave" style="background:var(--green);">
   <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,32 C360,16 1080,48 1440,24 L1440,48 L0,48 Z" fill="#2C4034"/></svg>
 </div>
@@ -647,9 +555,11 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="f-name">Marlene Krinninger</div>
-      <div class="f-addr">Reiki-Behandlung · Würding 8, 94496 Ortenburg<br>+49 171 2020208 · marlene.hajek2202@gmail.com</div>
+      <div class="f-addr">Holistic Pulsing &amp; Reiki · Würding 8, 94496 Ortenburg<br>+49 171 2020208 · marlene.hajek2202@gmail.com</div>
     </div>
     <nav class="footer-links">
+      <a href="pulsing.html">Holistic Pulsing</a>
+      <a href="reiki.html">Reiki</a>
       <a href="kontakt.html">Kontakt</a>
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
@@ -671,6 +581,12 @@
   document.querySelector('.nav-logo').addEventListener('click', shut);
   document.querySelectorAll('.ml').forEach(l => l.addEventListener('click', shut));
 
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
   // Tagline rotation
   const tls = document.querySelectorAll('.hero-tagline');
   let cur = 0;
@@ -679,23 +595,6 @@
     cur = (cur + 1) % tls.length;
     tls[cur].classList.add('active');
   }, 3000);
-
-  // Scroll reveal
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  // FAQ
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const ans = btn.nextElementSibling;
-      const isOpen = ans.classList.contains('open');
-      document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
-      document.querySelectorAll('.faq-q').forEach(b => { b.classList.remove('open'); b.setAttribute('aria-expanded','false'); });
-      if (!isOpen) { ans.classList.add('open'); btn.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
-    });
-  });
 </script>
 </body>
 </html>
