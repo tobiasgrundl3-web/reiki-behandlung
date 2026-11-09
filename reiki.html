@@ -1,655 +1,271 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reiki-Behandlung in Ortenburg – Marlene Krinninger</title>
-  <meta name="description" content="Reiki-Behandlung bei Marlene Krinninger in Ortenburg. Ganzheitlich, sanft, wirksam.">
-  <link rel="icon" type="image/png" href="img/logo.png">
-  <link rel="apple-touch-icon" href="img/logo.png">
+  <title>Reiki in Ortenburg: Reiki-Behandlung und Ablauf | Marlene Krinninger</title>
+  <meta name="description" content="Reiki bei Marlene Krinninger in Ortenburg: Was ist Reiki, wie läuft eine Reiki-Sitzung ab und was dich erwartet. Ruhig, achtsam und ohne Vorkenntnisse.">
+  <meta name="theme-color" content="#2C4034">
+  <meta property="og:title" content="Reiki in Ortenburg: Reiki-Behandlung und Ablauf | Marlene Krinninger">
+  <meta property="og:description" content="Reiki bei Marlene Krinninger in Ortenburg: Was ist Reiki, wie läuft eine Reiki-Sitzung ab und was dich erwartet. Ruhig, achtsam und ohne Vorkenntnisse.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <link rel="icon" type="image/png" href="img/logo-360.png">
+  <link rel="apple-touch-icon" href="img/logo-360.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --cream: #F7F2EA;
-      --green: #3A5440;
-      --green-dark: #2C4034;
-      --green-light: #4E6B56;
-      --gold: #C4956A;
-      --beige: #EADDD3;
-      --beige-dark: #D0C4B8;
-      --text: #3C3530;
-      --text-muted: #7A6F68;
-      --white: #FFFFFF;
-      --shadow: rgba(58,84,64,0.12);
-      --radius: 12px;
-      --t: 0.35s ease;
-    }
-
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; overflow-x: hidden; }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-    ul { list-style: none; }
-    button { cursor: pointer; font-family: inherit; }
-
-    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.25; }
-
-    .section-label {
-      font-family: 'Lato', sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 700;
-      display: block;
-      margin-bottom: 12px;
-    }
-
-    .inner { max-width: 1140px; margin: 0 auto; padding: 0 48px; }
-    section { padding: 100px 0; }
-
-    /* BUTTONS */
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 13px 30px; border-radius: 50px;
-      font-family: 'Lato', sans-serif; font-size: 0.85rem;
-      font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-      transition: var(--t); border: 2px solid transparent;
-    }
-    .btn-primary { background: var(--green); color: var(--cream); border-color: var(--green); }
-    .btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 24px var(--shadow); }
-    .btn-outline { background: transparent; color: var(--cream); border-color: rgba(247,242,234,0.6); }
-    .btn-outline:hover { background: rgba(247,242,234,0.12); color: var(--cream); border-color: var(--cream); transform: translateY(-2px); }
-    .btn-cream { background: var(--cream); color: var(--green); border-color: var(--cream); }
-    .btn-cream:hover { background: var(--white); transform: translateY(-2px); }
-    .btn-outline-light { background: transparent; color: var(--cream); border-color: rgba(247,242,234,0.45); }
-    .btn-outline-light:hover { border-color: var(--cream); background: rgba(247,242,234,0.08); }
-
-    /* REVEAL */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .rd1 { transition-delay: 0.1s; } .rd2 { transition-delay: 0.2s; } .rd3 { transition-delay: 0.3s; }
-    .rd4 { transition-delay: 0.4s; } .rd5 { transition-delay: 0.5s; } .rd6 { transition-delay: 0.6s; }
-    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
-
-    /* NAV */
-    #mainNav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 10px 48px;
-      display: flex; align-items: center; justify-content: space-between;
-      transition: padding var(--t), box-shadow var(--t);
-      background: rgba(247,242,234,0.96);
-      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 2px 24px rgba(58,84,64,0.08);
-    }
-    #mainNav.scrolled {
-      padding: 7px 48px;
-    }
-    .nav-logo { display: flex; flex-direction: column; line-height: 1.15; }
-    .nav-logo-name { font-family: 'Dancing Script', cursive; font-size: 1.55rem; color: var(--green); font-weight: 700; }
-    .nav-logo-sub { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
-    .nav-links { display: flex; align-items: center; gap: 32px; }
-    .nav-links a {
-      font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
-      font-weight: 700; color: var(--text); position: relative; transition: color var(--t);
-    }
-    .nav-links a::after {
-      content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
-      height: 1px; background: var(--gold);
-      transform: scaleX(0); transition: transform var(--t); transform-origin: center;
-    }
-    .nav-links a:hover { color: var(--green); }
-    .nav-links a:hover::after { transform: scaleX(1); }
-    .nav-cta { margin-left: 12px; padding: 10px 22px !important; font-size: 0.78rem !important; }
-
-    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: var(--green); border-radius: 2px; transition: var(--t); }
-
-    .mobile-menu {
-      display: none; position: fixed; inset: 0;
-      background: var(--cream); z-index: 99;
-      flex-direction: column; align-items: center; justify-content: center; gap: 28px;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu .ml { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--green); }
-
-    /* HERO */
-    #hero {
-      min-height: 100vh; display: flex; align-items: center;
-      padding-top: 80px; position: relative; overflow: hidden;
-      background-image: url('img/hero.jpg');
-      background-size: cover;
-      background-position: center 40%;
-    }
-    #hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(44,64,52,0.82) 0%, rgba(44,64,52,0.55) 55%, rgba(44,64,52,0.28) 100%);
-      pointer-events: none;
-    }
-    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 0; align-items: center; max-width: 720px; }
-    .hero-label { font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 20px; }
-    .hero-headline {
-      font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 600;
-      color: var(--cream); line-height: 1.2; margin-bottom: 24px;
-    }
-    .hero-tagline-wrap { height: 44px; overflow: hidden; margin-bottom: 32px; position: relative; }
-    .hero-tagline {
-      font-family: 'Dancing Script', cursive; font-size: 1.65rem; color: rgba(247,242,234,0.88);
-      opacity: 0; transform: translateY(14px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-      position: absolute; white-space: nowrap;
-    }
-    .hero-tagline.active { opacity: 1; transform: translateY(0); position: relative; }
-    .hero-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
-    .hero-badge {
-      padding: 6px 16px; border-radius: 50px;
-      border: 1px solid rgba(247,242,234,0.35);
-      font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: rgba(247,242,234,0.85); font-weight: 700; background: rgba(247,242,234,0.08);
-    }
-    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-    .hero-visual { display: flex; align-items: center; justify-content: center; }
-    .tree-wrap {
-      width: 100%; max-width: 380px; position: relative;
-    }
-    .tree-wrap::before {
-      content: ''; position: absolute; inset: -10%;
-      background: radial-gradient(ellipse at 50% 55%, rgba(196,149,106,0.1) 0%, transparent 65%);
-      border-radius: 50%;
-    }
-
-    /* WAVE */
-    .wave { display: block; width: 100%; overflow: hidden; line-height: 0; }
-    .wave svg { display: block; width: 100%; }
-
-    /* REIKI */
-    #reiki { background: var(--white); }
-    .reiki-grid { display: grid; grid-template-columns: 1fr 1.1fr 1.1fr; gap: 44px; align-items: start; }
-    .reiki-photo-col { border-radius: var(--radius); overflow: hidden; min-height: 520px; position: sticky; top: 100px; }
-    .reiki-photo-col img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; min-height: 520px; transition: transform 0.6s ease; }
-    .reiki-photo-col img:hover { transform: scale(1.03); }
-    .reiki-text h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); color: var(--green-dark); margin-bottom: 24px; }
-    .reiki-text p { color: var(--text-muted); margin-bottom: 16px; font-size: 1rem; }
-    .facts-card {
-      background: var(--cream); border-radius: var(--radius);
-      padding: 36px; border-left: 4px solid var(--gold);
-    }
-    .facts-card h3 { font-size: 1.15rem; color: var(--green); margin-bottom: 24px; }
-    .fact-row { display: grid; grid-template-columns: 90px 1fr; gap: 8px 16px; padding: 11px 0; border-bottom: 1px solid var(--beige-dark); }
-    .fact-row:last-child { border-bottom: none; }
-    .fact-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 700; padding-top: 2px; }
-    .fact-val { font-size: 0.93rem; color: var(--text); }
-
-    /* WIRKUNG */
-    #wirkung { background: var(--green); color: var(--cream); }
-    .wirkung-head { text-align: center; margin-bottom: 60px; }
-    .wirkung-head h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); color: var(--cream); margin-bottom: 14px; }
-    .wirkung-head p { color: rgba(247,242,234,0.72); max-width: 540px; margin: 0 auto; }
-    .benefits-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
-    .benefit-card {
-      background: rgba(247,242,234,0.07); border: 1px solid rgba(247,242,234,0.11);
-      border-radius: var(--radius); padding: 26px 22px;
-      transition: background var(--t), transform var(--t);
-    }
-    .benefit-card:hover { background: rgba(247,242,234,0.13); transform: translateY(-4px); }
-    .benefit-icon { font-size: 1.9rem; display: block; margin-bottom: 13px; }
-    .benefit-card h3 { font-size: 1rem; color: var(--cream); margin-bottom: 9px; }
-    .benefit-card p { font-size: 0.86rem; color: rgba(247,242,234,0.68); line-height: 1.6; }
-
-    /* SITZUNG */
-    #sitzung { background: var(--cream); }
-    .sitzung-feature { border-radius: var(--radius); overflow: hidden; height: 420px; margin-bottom: 60px; }
-    .sitzung-feature img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; display: block; }
-    .sitzung-head { text-align: center; margin-bottom: 68px; }
-    .sitzung-head h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); color: var(--green-dark); }
-    .steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; margin-bottom: 48px; }
-    .step {
-      position: relative; padding: 30px 22px;
-      background: var(--white); border-radius: var(--radius); overflow: hidden;
-    }
-    .step-num {
-      position: absolute; top: -8px; right: 14px;
-      font-family: 'Playfair Display', serif; font-size: 5rem;
-      font-weight: 700; color: var(--beige); line-height: 1;
-      user-select: none; pointer-events: none;
-    }
-    .step-icon { font-size: 1.7rem; display: block; margin-bottom: 14px; }
-    .step h3 { font-size: 1rem; color: var(--green-dark); margin-bottom: 10px; }
-    .step p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
-    .disclaimer {
-      background: var(--beige); border-radius: var(--radius);
-      padding: 22px 28px; display: flex; gap: 14px; align-items: flex-start;
-      border-left: 3px solid var(--gold);
-    }
-    .disclaimer p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.6; }
-    .disclaimer strong { color: var(--text); }
-
-    /* QUOTE */
-    #quote { background: var(--beige); padding: 80px 48px; text-align: center; }
-    .quote-inner { max-width: 760px; margin: 0 auto; }
-    .quote-mark { font-family: 'Dancing Script', cursive; font-size: 7rem; color: rgba(196,149,106,0.22); line-height: 0.5; display: block; margin-bottom: -16px; }
-    .quote-text { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2.3rem); color: var(--green-dark); font-style: italic; line-height: 1.4; margin-bottom: 14px; }
-    .quote-by { font-family: 'Dancing Script', cursive; font-size: 1.15rem; color: var(--gold); }
-
-    /* ARBEITSWEISE */
-    #arbeitsweise { background: var(--white); }
-    .arbeitsweise-head { text-align: center; margin-bottom: 60px; }
-    .arbeitsweise-head h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); color: var(--green-dark); }
-    .pillars-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
-    .pillar {
-      text-align: center; padding: 44px 28px;
-      border-radius: var(--radius); background: var(--cream);
-      border-top: 3px solid var(--gold);
-      transition: transform var(--t), box-shadow var(--t);
-    }
-    .pillar:hover { transform: translateY(-6px); box-shadow: 0 16px 40px var(--shadow); }
-    .pillar-icon { font-size: 2.4rem; display: block; margin-bottom: 18px; }
-    .pillar h3 { font-size: 1.25rem; color: var(--green-dark); margin-bottom: 12px; }
-    .pillar p { font-size: 0.94rem; color: var(--text-muted); line-height: 1.7; }
-
-    /* FAQ */
-    #faq { background: var(--cream); }
-    .faq-head { text-align: center; margin-bottom: 52px; }
-    .faq-head h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); color: var(--green-dark); }
-    .faq-list { max-width: 760px; margin: 0 auto; }
-    .faq-item { border-bottom: 1px solid var(--beige-dark); }
-    .faq-q {
-      width: 100%; background: none; border: none;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 20px 0; text-align: left;
-      font-family: 'Playfair Display', serif; font-size: 1.03rem; color: var(--text);
-      gap: 16px; transition: color var(--t);
-    }
-    .faq-q:hover, .faq-q.open { color: var(--green); }
-    .faq-ico {
-      flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
-      border: 1.5px solid var(--gold); display: flex; align-items: center; justify-content: center;
-      color: var(--gold); font-size: 1rem; font-style: normal; font-family: 'Lato', sans-serif;
-      transition: transform var(--t), background var(--t);
-    }
-    .faq-q.open .faq-ico { background: var(--gold); color: var(--white); transform: rotate(45deg); }
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-    .faq-a.open { max-height: 280px; }
-    .faq-a-inner { padding: 0 0 20px; font-size: 0.96rem; color: var(--text-muted); line-height: 1.75; }
-    .faq-a-inner a { color: var(--green); text-decoration: underline; }
-
-    /* KONTAKT */
-    #kontakt { background: var(--green); color: var(--cream); }
-    .kontakt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
-    .kontakt-info h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); color: var(--cream); margin-bottom: 36px; }
-    .k-items { display: flex; flex-direction: column; gap: 22px; }
-    .k-item { display: flex; align-items: center; gap: 16px; }
-    .k-ico {
-      width: 48px; height: 48px; flex-shrink: 0; border-radius: 50%;
-      background: rgba(247,242,234,0.1); border: 1px solid rgba(247,242,234,0.18);
-      display: flex; align-items: center; justify-content: center; font-size: 1.15rem;
-    }
-    .k-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,242,234,0.5); margin-bottom: 2px; }
-    .k-val { font-size: 0.98rem; color: var(--cream); }
-    .k-val a { color: var(--cream); transition: color var(--t); }
-    .k-val a:hover { color: var(--gold); }
-    .cta-box {
-      background: rgba(247,242,234,0.08); border: 1px solid rgba(247,242,234,0.14);
-      border-radius: var(--radius); padding: 44px 36px; text-align: center;
-    }
-    .cta-box .script-line { font-family: 'Dancing Script', cursive; font-size: 1.75rem; color: var(--gold); display: block; margin-bottom: 14px; }
-    .cta-box h3 { font-size: 1.35rem; color: var(--cream); margin-bottom: 12px; }
-    .cta-box p { font-size: 0.93rem; color: rgba(247,242,234,0.68); margin-bottom: 28px; line-height: 1.6; }
-    .cta-btns { display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
-
-    /* FOOTER */
-    footer { background: var(--green-dark); padding: 44px 48px; }
-    .footer-inner { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-    .footer-brand .f-name { font-family: 'Dancing Script', cursive; font-size: 1.3rem; color: var(--cream); margin-bottom: 4px; }
-    .footer-brand .f-addr { font-size: 0.8rem; color: rgba(247,242,234,0.55); line-height: 1.5; }
-    .footer-links { display: flex; gap: 10px 22px; flex-wrap: wrap; }
-    .footer-links a { font-size: 0.78rem; letter-spacing: 0.1em; color: rgba(247,242,234,0.45); transition: color var(--t); }
-    .footer-links a:hover { color: var(--gold); }
-
-    /* RESPONSIVE */
-    @media (max-width: 1024px) {
-      .benefits-grid { grid-template-columns: repeat(2,1fr); }
-      .steps-grid { grid-template-columns: repeat(2,1fr); }
-    }
-    @media (max-width: 900px) {
-      .reiki-photo-col { display: none; }
-      .reiki-grid { grid-template-columns: 1fr; gap: 36px; }
-      .sitzung-feature { height: 260px; }
-      .nav-logo-img { width: 66px; height: 66px; }
-      #mainNav { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: none; }
-      #mainNav.scrolled { background: rgba(247,242,234,0.96); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 2px 24px rgba(58,84,64,0.08); }
-      nav, #mainNav.scrolled { padding-left: 24px; padding-right: 24px; }
-      .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; }
-      section { padding: 68px 0; }
-      .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 44px; }
-      .hero-badges, .hero-btns { justify-content: center; }
-      .hero-visual { order: -1; }
-      .tree-wrap { max-width: 240px; margin: 0 auto; }
-      .reiki-grid { grid-template-columns: 1fr; gap: 44px; }
-      .pillars-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
-      .kontakt-grid { grid-template-columns: 1fr; gap: 44px; }
-    }
-    @media (max-width: 600px) {
-      .inner { padding: 0 20px; }
-      nav, #mainNav.scrolled { padding-left: 20px; padding-right: 20px; }
-      .benefits-grid { grid-template-columns: 1fr; }
-      .steps-grid { grid-template-columns: 1fr; }
-      section { padding: 56px 0; }
-      #quote { padding: 60px 20px; }
-      footer { padding: 36px 20px; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
-    }
-
-
-    /* NAV ACTIVE */
-    .nav-links a.active { color: var(--green); }
-    .nav-links a.active::after { transform: scaleX(1); }
-    .mobile-menu .ml.active { color: var(--gold); }
-
-    /* NAV LOGO IMAGE */
-    .nav-logo { display: flex; align-items: center; gap: 10px; }
-    .nav-logo-img { width: 90px; height: 90px; object-fit: contain; flex-shrink: 0; transition: transform 0.35s ease; }
-    .nav-logo:hover .nav-logo-img { transform: rotate(8deg) scale(1.05); }
-    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.15; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/hero-1920.jpg">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/reiki.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body>
+<body class="hero-dark">
 
-<!-- NAV -->
-<nav id="mainNav">
-  <a href="index.html" class="nav-logo">
-    <img src="img/logo.png" alt="Marlene Krinninger Logo" class="nav-logo-img">
+<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+<nav id="mainNav" aria-label="Hauptnavigation">
+  <a href="index.html" class="nav-logo" aria-label="Zur Startseite">
+    <img src="img/logo-360.png" alt="Marlene Krinninger Logo" class="nav-logo-img" width="90" height="90">
   </a>
   <ul class="nav-links">
     <li><a href="pulsing.html">Holistic Pulsing</a></li>
-    <li><a href="reiki.html" class="active">Reiki</a></li>
+    <li><a href="reiki.html" class="active" aria-current="page">Reiki</a></li>
   </ul>
   <a href="kontakt.html" class="btn btn-primary nav-cta">Termin vereinbaren</a>
-  <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+  <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="pulsing.html" class="ml">Holistic Pulsing</a>
   <a href="reiki.html" class="ml active">Reiki</a>
   <a href="kontakt.html" class="btn btn-primary" style="margin-top:16px;">Termin vereinbaren</a>
 </div>
 
-<!-- HERO -->
-<section id="hero">
+<main id="inhalt">
+
+<!-- 1. HERO -->
+<header class="r-hero">
+  <svg class="rings" viewBox="0 0 1000 1000" aria-hidden="true"><circle cx="500" cy="500" r="180"/><circle cx="500" cy="500" r="270"/><circle cx="500" cy="500" r="360"/><circle cx="500" cy="500" r="450"/></svg>
   <div class="inner">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <p class="hero-label reveal">Reiki-Behandlung · Ortenburg</p>
-        <h1 class="hero-headline reveal rd1">Energie, die fließt.<br>Heilung, die berührt.</h1>
-        <div class="hero-tagline-wrap reveal rd2">
-          <p class="hero-tagline active" id="tl0">Entspannung, die bleibt.</p>
-          <p class="hero-tagline" id="tl1">Balance, die trägt.</p>
-          <p class="hero-tagline" id="tl2">Ein Weg zurück zu dir.</p>
-        </div>
-        <div class="hero-badges reveal rd3">
-          <span class="hero-badge">Ganzheitlich</span>
-          <span class="hero-badge">Sanft</span>
-          <span class="hero-badge">Wirksam</span>
-        </div>
-        <div class="hero-btns reveal rd4">
-          <a href="kontakt.html" class="btn btn-primary">Termin vereinbaren</a>
-          <a href="#reiki" class="btn btn-outline">Mehr erfahren</a>
-        </div>
-      </div>
-
+    <p class="hero-label reveal">Reiki · Ortenburg</p>
+    <h1 class="reveal" style="--d:.3s">Ein Moment der Stille.<br>Ganz bei dir.</h1>
+    <p class="lead reveal" style="--d:.6s">Reiki ist eine aus Japan stammende Praxis der achtsamen Handauflegung. Entdecke eine ruhige Auszeit, in der du dich ganz auf dich selbst konzentrieren darfst.</p>
+    <div class="hero-btns reveal" style="--d:.9s">
+      <a href="#was-ist-reiki" class="btn btn-primary">Reiki kennenlernen</a>
+      <a href="kontakt.html" class="btn btn-outline">Termin anfragen</a>
     </div>
+    <div class="hero-line" aria-hidden="true"></div>
   </div>
-</section>
+</header>
 
-<!-- WAVE -->
-<div class="wave" style="background:var(--cream);">
-  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,32 C360,48 1080,16 1440,32 L1440,48 L0,48 Z" fill="#ffffff"/></svg>
-</div>
-
-<!-- WAS IST REIKI -->
-<section id="reiki">
+<!-- 2. WAS IST REIKI -->
+<section class="r-what" id="was-ist-reiki" aria-labelledby="what-h">
   <div class="inner">
-    <div class="reiki-grid">
-      <div class="reiki-photo-col reveal">
-        <img src="img/lebensbaum.jpg" alt="Lebensbaum mit Sonnenstrahlen">
-      </div>
-      <div class="reiki-text">
-        <span class="section-label reveal">Was ist Reiki?</span>
-        <h2 class="reveal rd1">Heilenergie durch sanfte Berührung</h2>
-        <p class="reveal rd2">Reiki ist eine japanische Methode zur Stressbewältigung und Entspannung, die auch die Förderung der Heilung unterstützt. Das Wort <em>Reiki</em> setzt sich aus <em>Rei</em> (universell) und <em>Ki</em> (Lebensenergie) zusammen.</p>
-        <p class="reveal rd3">Entwickelt Anfang des 20. Jahrhunderts von Mikao Usui, wird Reiki durch sanftes Auflegen der Hände auf oder über den Körper praktiziert. Ziel ist es, den natürlichen Energiefluss zu unterstützen und Blockaden zu lösen.</p>
-        <p class="reveal rd4">Reiki wirkt auf körperlicher, emotionaler und geistiger Ebene – sanft, nicht-invasiv und ohne Nebenwirkungen. Es kann als wertvolle Ergänzung zur schulmedizinischen Behandlung eingesetzt werden.</p>
-      </div>
-      <div class="facts-card reveal rd2">
-        <h3>Wissenswertes über Reiki</h3>
-        <div class="fact-row"><span class="fact-label">Ursprung</span><span class="fact-val">Japan, frühes 20. Jh. (Mikao Usui)</span></div>
-        <div class="fact-row"><span class="fact-label">Methode</span><span class="fact-val">Sanfte Handauflegung auf Energiepunkte</span></div>
-        <div class="fact-row"><span class="fact-label">Dauer</span><span class="fact-val">60–90 Minuten pro Sitzung</span></div>
-        <div class="fact-row"><span class="fact-label">Wirkung</span><span class="fact-val">Entspannung, Energiefluss, Selbstheilung</span></div>
-        <div class="fact-row"><span class="fact-label">Kleidung</span><span class="fact-val">Bekleidet – keine Entkleidung nötig</span></div>
-        <div class="fact-row"><span class="fact-label">Verbreitung</span><span class="fact-val">Weltweit in über 100 Ländern praktiziert</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WAVE -->
-<div class="wave" style="background:var(--white);">
-  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,16 C480,48 960,0 1440,24 L1440,48 L0,48 Z" fill="#3A5440"/></svg>
-</div>
-
-<!-- WIRKUNG -->
-<section id="wirkung">
-  <div class="inner">
-    <div class="wirkung-head">
-      <span class="section-label reveal">Anwendungsgebiete</span>
-      <h2 class="reveal rd1">Reiki kann unterstützen bei …</h2>
-      <p class="reveal rd2">Reiki begleitet dich auf deinem Weg zu mehr Wohlbefinden – körperlich, emotional und seelisch.</p>
-    </div>
-    <div class="benefits-grid">
-      <div class="benefit-card reveal"><span class="benefit-icon">🌿</span><h3>Stressabbau</h3><p>Tiefe Entspannung und Loslassen von angesammeltem Stress und innerer Anspannung.</p></div>
-      <div class="benefit-card reveal rd1"><span class="benefit-icon">🔓</span><h3>Innere Blockaden</h3><p>Sanfte Auflösung emotionaler und energetischer Blockaden, die dich einengen.</p></div>
-      <div class="benefit-card reveal rd2"><span class="benefit-icon">✨</span><h3>Immunsystem</h3><p>Stärkung der körpereigenen Abwehrkräfte und Unterstützung der Selbstregulation.</p></div>
-      <div class="benefit-card reveal rd3"><span class="benefit-icon">💚</span><h3>Körperl. Beschwerden</h3><p>Begleitende Unterstützung bei Verspannungen, Schmerzen und körperlichem Unwohlsein.</p></div>
-      <div class="benefit-card reveal rd1"><span class="benefit-icon">🌱</span><h3>Selbstheilung</h3><p>Aktivierung der natürlichen Selbstheilungskräfte des Körpers und der Psyche.</p></div>
-      <div class="benefit-card reveal rd2"><span class="benefit-icon">☀️</span><h3>Energie & Lebensfreude</h3><p>Neue Kraft tanken – mehr Leichtigkeit und Vitalität im Alltag spüren.</p></div>
-      <div class="benefit-card reveal rd3"><span class="benefit-icon">🕊️</span><h3>Innere Ruhe</h3><p>Tiefes Ankommen bei sich selbst und Entwicklung innerer Stille und Gelassenheit.</p></div>
-      <div class="benefit-card reveal rd4"><span class="benefit-icon">🌊</span><h3>Herausford. Phasen</h3><p>Sanfte Begleitung in schwierigen Übergängen, Trauer und Veränderungen.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- WAVE -->
-<div class="wave" style="background:var(--green);">
-  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,24 C360,0 1080,48 1440,16 L1440,48 L0,48 Z" fill="#F7F2EA"/></svg>
-</div>
-
-<!-- SITZUNG -->
-<section id="sitzung">
-  <div class="inner">
-    <div class="sitzung-head">
-      <span class="section-label reveal">Ablauf</span>
-      <h2 class="reveal rd1">Eine Sitzung bei mir</h2>
-    </div>
-    <div class="sitzung-feature reveal">
-      <img src="img/behandlung1.jpg" alt="Reiki Behandlung">
-    </div>
-    <div class="steps-grid">
-      <div class="step reveal">
-        <span class="step-num">01</span>
-        <span class="step-icon">🤝</span>
-        <h3>Ankommen & Gespräch</h3>
-        <p>Wir nehmen uns Zeit füreinander. Ich höre dir zu, beantworte deine Fragen und wir bereiten gemeinsam die Sitzung vor.</p>
-      </div>
-      <div class="step reveal rd1">
-        <span class="step-num">02</span>
-        <span class="step-icon">🙏</span>
-        <h3>Die Behandlung</h3>
-        <p>Du liegst bekleidet und bequem. Ich lege meine Hände sanft auf oder über verschiedene Körperstellen und folge dem Energiefluss.</p>
-      </div>
-      <div class="step reveal rd2">
-        <span class="step-num">03</span>
-        <span class="step-icon">🌙</span>
-        <h3>Nachklingen</h3>
-        <p>Nach der Behandlung nehmen wir uns Zeit zum Nachspüren. Du erzählst, was du erlebt hast – ich beantworte deine Fragen.</p>
-      </div>
-      <div class="step reveal rd3">
-        <span class="step-num">04</span>
-        <span class="step-icon">🌿</span>
-        <h3>Nächster Schritt</h3>
-        <p>Gemeinsam schauen wir, was dir gut getan hat und ob weitere Sitzungen sinnvoll wären. Jeder Weg ist individuell.</p>
-      </div>
-    </div>
-    <div class="disclaimer reveal">
-      <span style="font-size:1.3rem; flex-shrink:0; margin-top:2px;">ℹ️</span>
-      <p><strong>Wichtiger Hinweis:</strong> Reiki ist eine ergänzende Methode und kein Ersatz für schulmedizinische Diagnose oder Behandlung. Bei gesundheitlichen Beschwerden wenden Sie sich bitte an einen Arzt oder eine Ärztin.</p>
-    </div>
-  </div>
-</section>
-
-<!-- QUOTE -->
-<div id="quote">
-  <div class="quote-inner reveal">
-    <span class="quote-mark">"</span>
-    <p class="quote-text">Reiki bringt dich zurück in deine Mitte.</p>
-    <span class="quote-by">Marlene Krinninger</span>
-  </div>
-</div>
-
-<!-- WAVE -->
-<div class="wave" style="background:var(--beige);">
-  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,16 C480,40 960,8 1440,28 L1440,48 L0,48 Z" fill="#ffffff"/></svg>
-</div>
-
-<!-- ARBEITSWEISE -->
-<section id="arbeitsweise">
-  <div class="inner">
-    <div class="arbeitsweise-head">
-      <span class="section-label reveal">Meine Arbeitsweise</span>
-      <h2 class="reveal rd1">Was mich auszeichnet</h2>
-    </div>
-    <div class="pillars-grid">
-      <div class="pillar reveal">
-        <span class="pillar-icon">🌍</span>
-        <h3>Ganzheitlich</h3>
-        <p>Ich sehe dich als ganzen Menschen – Körper, Geist und Seele bilden eine Einheit. Jede Sitzung berücksichtigt dich in deiner Vollständigkeit.</p>
-      </div>
-      <div class="pillar reveal rd2">
-        <span class="pillar-icon">💫</span>
-        <h3>Individuell</h3>
-        <p>Jede Sitzung ist auf dich abgestimmt. Ich folge dem, was dein Energiesystem braucht – ohne Schema, mit echtem Gespür.</p>
-      </div>
-      <div class="pillar reveal rd4">
-        <span class="pillar-icon">🕯️</span>
-        <h3>Achtsam</h3>
-        <p>Du bekommst einen geschützten Raum, in dem du dich vollständig fallen lassen kannst. Vertrauen und Würde stehen im Mittelpunkt.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WAVE -->
-<div class="wave" style="background:var(--white);">
-  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,32 C480,8 960,48 1440,20 L1440,48 L0,48 Z" fill="#F7F2EA"/></svg>
-</div>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="inner">
-    <div class="faq-head">
-      <span class="section-label reveal">Häufige Fragen</span>
-      <h2 class="reveal rd1">FAQ</h2>
-    </div>
-    <div class="faq-list reveal rd2">
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Muss ich an Reiki glauben, damit es wirkt?<span class="faq-ico">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Nein. Reiki wirkt unabhängig von Glauben oder Überzeugungen. Alles, was du mitbringen musst, ist Offenheit und die Bereitschaft, dich zu entspannen. Auch skeptische Menschen berichten häufig von positiven Erfahrungen.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Wie viele Sitzungen brauche ich?<span class="faq-ico">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Das ist sehr individuell. Für akute Themen können schon 1–3 Sitzungen spürbare Wirkung zeigen. Bei tieferen Anliegen empfehle ich anfangs 4–6 Sitzungen. Gemeinsam schauen wir, was für dich passt.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Was spüre ich während der Behandlung?<span class="faq-ico">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Die Erfahrungen sind sehr verschieden. Viele spüren Wärme, ein Kribbeln oder tiefe Entspannung. Manche sehen Farben, andere schlafen einfach ein. Es gibt kein „richtig" oder „falsch".</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Ist Reiki auch für Kinder geeignet?<span class="faq-ico">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Ja, Reiki ist für jedes Alter geeignet – auch für Kinder und Babys. Die Behandlung ist sanft und behutsam. Für Kinder unter 12 Jahren ist ein Elternteil während der Sitzung anwesend.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Wo findet die Behandlung statt?<span class="faq-ico">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Die Behandlung findet in meiner Praxis in Würding 8, 94496 Ortenburg statt – ein ruhiger, geborgener Raum für dein Wohlbefinden. Auf Anfrage sind auch Hausbesuche in der näheren Umgebung möglich.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Wie kann ich einen Termin vereinbaren?<span class="faq-ico">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Füll das <a href="kontakt.html">Kontaktformular</a> aus, ruf mich an unter +49 171 2020208 oder schreib mir an marlene.hajek2202@gmail.com. Ich melde mich zeitnah bei dir.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WAVE -->
-<div class="wave" style="background:var(--cream);">
-  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,16 C360,48 1080,0 1440,32 L1440,48 L0,48 Z" fill="#3A5440"/></svg>
-</div>
-
-<!-- KONTAKT -->
-<section id="kontakt">
-  <div class="inner">
-    <div class="kontakt-grid">
-      <div class="kontakt-info">
-        <span class="section-label reveal">Kontakt</span>
-        <h2 class="reveal rd1">Ich bin für dich da.</h2>
-        <div class="k-items">
-          <div class="k-item reveal rd2">
-            <div class="k-ico">📞</div>
-            <div><div class="k-label">Telefon</div><div class="k-val"><a href="tel:+491712020208">+49 171 2020208</a></div></div>
-          </div>
-          <div class="k-item reveal rd3">
-            <div class="k-ico">✉️</div>
-            <div><div class="k-label">E-Mail</div><div class="k-val"><a href="mailto:marlene.hajek2202@gmail.com">marlene.hajek2202@gmail.com</a></div></div>
-          </div>
-          <div class="k-item reveal rd4">
-            <div class="k-ico">📍</div>
-            <div><div class="k-label">Adresse</div><div class="k-val">Würding 8, 94496 Ortenburg</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="cta-box reveal rd2">
-        <span class="script-line">Bereit für deine erste Sitzung?</span>
-        <h3>Termin vereinbaren</h3>
-        <p>Schreib mir eine Nachricht oder ruf mich an. Ich freue mich auf dich und beantworte gerne all deine Fragen.</p>
-        <div class="cta-btns">
-          <a href="kontakt.html" class="btn btn-cream" style="justify-content:center;">Zum Kontaktformular</a>
-          <a href="tel:+491712020208" class="btn btn-outline-light" style="justify-content:center;">Direkt anrufen</a>
+    <header class="center">
+      <span class="section-label reveal">Was ist Reiki?</span>
+      <h2 id="what-h" class="big reveal" style="--d:.2s">Eine japanische Tradition der Achtsamkeit.</h2>
+    </header>
+    <div class="r-what-grid">
+      <figure class="r-what-photo ph reveal" style="--ar:3/4">
+        <img src="img/lebensbaum-1100.jpg" alt="Ein alter Baum mit weit ausladenden Wurzeln, durch dessen Äste die Sonne scheint" width="1100" height="1650" loading="lazy" decoding="async">
+      </figure>
+      <div class="r-what-text">
+        <p class="reveal">Reiki hat seine Wurzeln in Japan und wird traditionell als Form der Energiearbeit verstanden. Während einer Sitzung werden die Hände sanft auf bestimmte Körperbereiche gelegt oder in geringem Abstand darüber gehalten.</p>
+        <p class="reveal" style="--d:.2s">Du kannst dabei ganz entspannt liegen und den Moment auf deine eigene Weise erleben. Manche Menschen berichten von Wärme, Ruhe oder einem angenehmen Gefühl der Entspannung. Andere nehmen kaum etwas Besonderes wahr. Beides ist vollkommen in Ordnung.</p>
+        <div class="info-field reveal" style="--d:.4s">
+          <strong>Gut zu wissen</strong>
+          <p>Reiki ist eine komplementäre Praxis. Die zugrunde liegende Vorstellung einer übertragbaren Heilenergie ist wissenschaftlich nicht nachgewiesen.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WAVE -->
-<div class="wave" style="background:var(--green);">
-  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style="height:48px;"><path d="M0,32 C360,16 1080,48 1440,24 L1440,48 L0,48 Z" fill="#2C4034"/></svg>
-</div>
+<!-- 3. WURZELN -->
+<!-- HINWEIS: Geschichtliche Aussagen vor Veröffentlichung fachlich prüfen. -->
+<section class="r-roots" aria-labelledby="roots-h">
+  <div class="inner">
+    <div class="r-roots-grid">
+      <figure class="ph r-roots-photo reveal">
+          <img src="img/reiki-japan.jpg" alt="Stimmungsvolle Aufnahme japanischer Natur oder Architektur" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('empty');this.remove()">
+          <figcaption class="ph-note"><strong>Foto folgt</strong><span>Japanische Natur oder Architektur, quadratisch (1:1)</span><code>img/reiki-japan.jpg</code></figcaption>
+        </figure>
+      <div>
+        <span class="section-label reveal">Die Wurzeln</span>
+        <h2 id="roots-h" class="big reveal" style="--d:.15s">Von Japan in die Welt.</h2>
+        <ol class="timeline" data-seq>
+          <li class="reveal" style="--d:.3s"><h3>Ursprung</h3><p>Reiki ist eng mit Mikao Usui und einer japanischen Tradition des frühen 20. Jahrhunderts verbunden.</p></li>
+          <li class="reveal" style="--d:.7s"><h3>Der Name</h3><p>Der Begriff wird häufig mit „universeller Lebensenergie“ übersetzt.</p></li>
+          <li class="reveal" style="--d:1.1s"><h3>Heute</h3><p>Heute wird Reiki in unterschiedlichen Traditionen praktiziert.</p></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- FOOTER -->
+<!-- 4. SITZUNG -->
+<!-- HINWEIS: Ablauf mit dem tatsächlichen Vorgehen von Marlene abgleichen. -->
+<section class="r-session" aria-labelledby="session-h">
+  <div class="inner">
+    <header class="center">
+      <span class="section-label reveal">Die Sitzung</span>
+      <h2 id="session-h" class="big reveal" style="--d:.2s">Ruhe beginnt mit einem achtsamen Moment.</h2>
+    </header>
+    <div class="r-session-grid">
+      <figure class="ph r-session-photo reveal">
+          <img src="img/reiki-haende.jpg" alt="Hände, die sanft über dem Körper einer liegenden Person ruhen" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('empty');this.remove()">
+          <figcaption class="ph-note"><strong>Foto folgt</strong><span>Hände bei der Reiki-Anwendung, Querformat (ca. 4:3)</span><code>img/reiki-haende.jpg</code></figcaption>
+        </figure>
+      <ol class="points" data-seq>
+        <li class="point" style="--i:0"><span class="pn" aria-hidden="true">01</span><h3>Ankommen</h3><p>Zunächst besprechen wir deine Wünsche und Fragen.</p></li>
+        <li class="point" style="--i:1"><span class="pn" aria-hidden="true">02</span><h3>Hände auflegen</h3><p>Während du entspannt liegst, werden die Hände sanft aufgelegt oder mit etwas Abstand gehalten.</p></li>
+        <li class="point" style="--i:2"><span class="pn" aria-hidden="true">03</span><h3>Nachspüren</h3><p>Nach der Sitzung bleibt Raum für Ruhe und einen persönlichen Austausch.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 5. SINNE -->
+<section class="r-senses" aria-labelledby="senses-h">
+  <div class="inner">
+    <header class="center">
+      <span class="section-label reveal">Ein Moment für deine Sinne</span>
+      <h2 id="senses-h" class="big reveal" style="--d:.2s">Wie du diesen Moment erleben kannst.</h2>
+    </header>
+    <div class="senses">
+      <div class="sense reveal">
+        <figure class="ph sense-photo">
+          <img src="img/reiki-stille.jpg" alt="Stille Naturstimmung in weichem Licht" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('empty');this.remove()">
+          <figcaption class="ph-note"><strong>Foto folgt</strong><span>Stille, Hochformat (ca. 3:4)</span><code>img/reiki-stille.jpg</code></figcaption>
+        </figure>
+        <h3>Stille</h3><p>Gedanken dürfen für einen Moment in den Hintergrund treten.</p>
+      </div>
+      <div class="sense reveal" style="--d:.3s">
+        <figure class="ph sense-photo">
+          <img src="img/reiki-waerme.jpg" alt="Warmes Sonnenlicht auf einer ruhigen Fläche" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('empty');this.remove()">
+          <figcaption class="ph-note"><strong>Foto folgt</strong><span>Wärme, Hochformat (ca. 3:4)</span><code>img/reiki-waerme.jpg</code></figcaption>
+        </figure>
+        <h3>Wärme</h3><p>Einige Menschen empfinden während der Anwendung ein Gefühl von Wärme.</p>
+      </div>
+      <div class="sense reveal" style="--d:.6s">
+        <figure class="ph sense-photo">
+          <img src="img/reiki-achtsamkeit.jpg" alt="Ruhige Detailaufnahme, die Achtsamkeit ausdrückt" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('empty');this.remove()">
+          <figcaption class="ph-note"><strong>Foto folgt</strong><span>Achtsamkeit, Hochformat (ca. 3:4)</span><code>img/reiki-achtsamkeit.jpg</code></figcaption>
+        </figure>
+        <h3>Achtsamkeit</h3><p>Die Aufmerksamkeit darf sich auf die eigene Wahrnehmung richten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. ERWARTUNGEN -->
+<section class="r-expect on-dark" aria-labelledby="expect-h">
+  <div class="inner">
+    <header class="center">
+      <span class="section-label reveal">Ehrlich und offen</span>
+      <h2 id="expect-h" class="big reveal" style="--d:.2s">Offenheit statt Erwartungen.</h2>
+    </header>
+    <div class="expect-grid">
+      <div class="expect reveal">
+        <h3>Was dich erwartet</h3>
+        <ul>
+          <li>Eine ruhige, achtsame Auszeit</li>
+          <li>Eine Anwendung mit sanfter oder berührungsloser Handpositionierung</li>
+          <li>Ein respektvoller Umgang mit deinen persönlichen Grenzen</li>
+          <li>Raum für dein individuelles Erleben</li>
+        </ul>
+      </div>
+      <div class="expect-div" aria-hidden="true"></div>
+      <div class="expect reveal" style="--d:.3s">
+        <h3>Was du nicht erwarten musst</h3>
+        <ul>
+          <li>Keine bestimmten körperlichen Empfindungen</li>
+          <li>Keine spirituelle Überzeugung als Voraussetzung</li>
+          <li>Kein fest vorgeschriebenes persönliches Erlebnis</li>
+          <li>Kein medizinisches Heilversprechen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. NEUGIERIG -->
+<section class="r-curious" aria-labelledby="curious-h">
+  <div class="inner">
+    <header class="center">
+      <span class="section-label reveal">Reiki ohne Vorkenntnisse</span>
+      <h2 id="curious-h" class="big reveal" style="--d:.2s">Du darfst neugierig sein.</h2>
+      <p class="reveal" style="--d:.3s">Die häufigsten Fragen von Menschen, die zum ersten Mal zu Reiki kommen.</p>
+    </header>
+    <div class="acc reveal">
+        <div class="acc-item">
+          <h3><button class="acc-q" id="r-q1" aria-expanded="false" aria-controls="r-a1">Muss ich an Energiearbeit glauben?<span class="acc-ico" aria-hidden="true"></span></button></h3>
+          <div class="acc-a" id="r-a1" role="region" aria-labelledby="r-q1"><div><p>Nein. Du brauchst keine spirituelle Überzeugung und keinen Glauben. Es genügt, wenn du neugierig bist und dir Zeit für dich nehmen möchtest.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <h3><button class="acc-q" id="r-q2" aria-expanded="false" aria-controls="r-a2">Muss ich während Reiki etwas Bestimmtes spüren?<span class="acc-ico" aria-hidden="true"></span></button></h3>
+          <div class="acc-a" id="r-a2" role="region" aria-labelledby="r-q2"><div><p>Nein. Manche Menschen berichten von Wärme, Ruhe oder einem angenehmen Gefühl der Entspannung, andere nehmen kaum etwas Besonderes wahr. Beides ist völlig in Ordnung.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <h3><button class="acc-q" id="r-q3" aria-expanded="false" aria-controls="r-a3">Werde ich bei der Sitzung berührt?<span class="acc-ico" aria-hidden="true"></span></button></h3>
+          <div class="acc-a" id="r-a3" role="region" aria-labelledby="r-q3"><div><p>Die Hände werden sanft auf bestimmte Körperbereiche gelegt oder mit etwas Abstand darüber gehalten. Wenn dir etwas unangenehm ist oder du Berührung lieber vermeiden möchtest, sag mir einfach Bescheid.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <h3><button class="acc-q" id="r-q4" aria-expanded="false" aria-controls="r-a4">Bleibe ich vollständig bekleidet?<span class="acc-ico" aria-hidden="true"></span></button></h3>
+          <div class="acc-a" id="r-a4" role="region" aria-labelledby="r-q4"><div><p>Ja. Du trägst bequeme Kleidung und bleibst während der gesamten Sitzung vollständig bekleidet.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <h3><button class="acc-q" id="r-q5" aria-expanded="false" aria-controls="r-a5">Kann ich Reiki ausprobieren, ohne Vorerfahrung zu haben?<span class="acc-ico" aria-hidden="true"></span></button></h3>
+          <div class="acc-a" id="r-a5" role="region" aria-labelledby="r-q5"><div><p>Ja. Vorkenntnisse sind nicht erforderlich. Zu Beginn sprechen wir über deine Wünsche und Fragen, und du kannst jederzeit nachfragen.</p></div></div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. AUF EINEN BLICK -->
+<!-- Dauer und Preis sind Platzhalter und müssen mit Marlene abgestimmt werden. -->
+<section class="r-glance" aria-labelledby="glance-h">
+  <div class="inner">
+    <header class="center">
+      <span class="section-label reveal">Auf einen Blick</span>
+      <h2 id="glance-h" class="big reveal" style="--d:.2s">Deine Reiki-Auszeit.</h2>
+    </header>
+    <dl class="glance reveal">
+      <div><dt>Dauer</dt><dd><span class="todo">[Dauer: mit Marlene abstimmen]</span></dd></div>
+      <div><dt>Preis</dt><dd><span class="todo">[Preis: mit Marlene abstimmen]</span></dd></div>
+      <div><dt>Ort</dt><dd>Würding 8<br>94496 Ortenburg</dd></div>
+      <div><dt>Kleidung</dt><dd>Bequem, vollständig bekleidet</dd></div>
+      <div><dt>Vorkenntnisse</dt><dd>Keine erforderlich</dd></div>
+      <div><dt>Kontakt</dt><dd><a href="tel:+491712020208">+49 171 2020208</a><br><a href="mailto:marlene.hajek2202@gmail.com">E-Mail schreiben</a></dd></div>
+    </dl>
+    <p class="note-box reveal"><strong>Hinweis:</strong> Reiki ist eine ergänzende Praxis zur Entspannung. Sie dient nicht der Diagnose oder Behandlung von Erkrankungen und ersetzt keine ärztliche oder psychotherapeutische Behandlung.</p>
+  </div>
+</section>
+
+<!-- 9. ABSCHLUSS -->
+<section class="r-cta" aria-labelledby="cta-h">
+  <svg class="rings-static" viewBox="0 0 1000 1000" aria-hidden="true"><circle cx="500" cy="500" r="200" stroke-opacity=".35"/><circle cx="500" cy="500" r="300" stroke-opacity=".25"/><circle cx="500" cy="500" r="400" stroke-opacity=".16"/><circle cx="500" cy="500" r="490" stroke-opacity=".1"/></svg>
+  <div class="inner">
+    <h2 id="cta-h" class="reveal">Vielleicht ist genau jetzt Zeit für einen Moment nur für dich.</h2>
+    <p class="sub reveal" style="--d:.3s">Du hast Fragen oder möchtest Reiki kennenlernen? Ich freue mich über deine Nachricht.</p>
+    <div class="reveal" style="--d:.6s"><a href="kontakt.html" class="btn btn-primary">Reiki-Termin anfragen</a></div>
+    <p class="cta-meta reveal" style="--d:.8s">Oder direkt: <a href="tel:+491712020208">+49 171 2020208</a> · <a href="mailto:marlene.hajek2202@gmail.com">marlene.hajek2202@gmail.com</a></p>
+    <p class="cta-xlink reveal" style="--d:.9s">Du interessierst dich auch für Holistic Pulsing? <a href="pulsing.html">Zur Pulsing-Seite</a></p>
+  </div>
+</section>
+
+</main>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="f-name">Marlene Krinninger</div>
       <div class="f-addr">Holistic Pulsing &amp; Reiki · Würding 8, 94496 Ortenburg<br>+49 171 2020208 · marlene.hajek2202@gmail.com</div>
     </div>
-    <nav class="footer-links">
+    <nav class="footer-links" aria-label="Footer">
       <a href="pulsing.html">Holistic Pulsing</a>
       <a href="reiki.html">Reiki</a>
       <a href="kontakt.html">Kontakt</a>
@@ -659,45 +275,6 @@
   </div>
 </footer>
 
-<script>
-  // Nav scroll
-  const nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
-
-  // Mobile menu
-  const ham = document.getElementById('hamburger');
-  const menu = document.getElementById('mobileMenu');
-  const shut = () => { menu.classList.remove('open'); ham.setAttribute('aria-expanded','false'); document.body.style.overflow=''; };
-  const open = () => { menu.classList.add('open'); ham.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; };
-  ham.addEventListener('click', () => menu.classList.contains('open') ? shut() : open());
-  document.querySelector('.nav-logo').addEventListener('click', shut);
-  document.querySelectorAll('.ml').forEach(l => l.addEventListener('click', shut));
-
-  // Tagline rotation
-  const tls = document.querySelectorAll('.hero-tagline');
-  let cur = 0;
-  setInterval(() => {
-    tls[cur].classList.remove('active');
-    cur = (cur + 1) % tls.length;
-    tls[cur].classList.add('active');
-  }, 3000);
-
-  // Scroll reveal
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  // FAQ
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const ans = btn.nextElementSibling;
-      const isOpen = ans.classList.contains('open');
-      document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
-      document.querySelectorAll('.faq-q').forEach(b => { b.classList.remove('open'); b.setAttribute('aria-expanded','false'); });
-      if (!isOpen) { ans.classList.add('open'); btn.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
-    });
-  });
-</script>
+<script src="js/site.js" defer></script>
 </body>
 </html>
