@@ -1,7 +1,7 @@
 /* Kontaktauswahl: Jeder Button mit data-contact öffnet ein Fenster mit "Anrufen" und "E-Mail schreiben".
    Ohne JavaScript (oder in sehr alten Browsern) funktioniert der Button als normaler E-Mail-Link. */
 (function () {
-  var PHONE = '+491712020208', PHONE_SHOW = '+49 171 2020208', MAIL = 'marlene.hajek2202@gmail.com';
+  var PHONE = '+491712020208', PHONE_SHOW = '+49 171 2020208', MAIL = 'marlene.krinninger@freenet.de';
   if (typeof HTMLDialogElement !== 'function') return;
   var dlg, mailLink;
 

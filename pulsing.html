@@ -12,9 +12,9 @@
   <meta property="og:locale" content="de_DE">
   <link rel="icon" type="image/png" href="img/logo-360.png">
   <link rel="apple-touch-icon" href="img/logo-360.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/lato-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="preload" as="image" href="img/hero-1920.jpg">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/pulsing.css">
@@ -33,7 +33,7 @@
     <li><a href="pulsing.html" class="active" aria-current="page">Holistic Pulsing</a></li>
     <li><a href="reiki.html">Reiki</a></li>
   </ul>
-  <a href="mailto:marlene.hajek2202@gmail.com?subject=Terminanfrage%20Holistic%20Pulsing" data-contact data-subject="Terminanfrage Holistic Pulsing" class="btn btn-primary nav-cta">Termin vereinbaren</a>
+  <a href="mailto:marlene.krinninger@freenet.de?subject=Terminanfrage%20Holistic%20Pulsing" data-contact data-subject="Terminanfrage Holistic Pulsing" class="btn btn-primary nav-cta">Termin vereinbaren</a>
   <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span><span></span>
   </button>
@@ -42,7 +42,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <a href="pulsing.html" class="ml active">Holistic Pulsing</a>
   <a href="reiki.html" class="ml">Reiki</a>
-  <a href="mailto:marlene.hajek2202@gmail.com?subject=Terminanfrage%20Holistic%20Pulsing" data-contact data-subject="Terminanfrage Holistic Pulsing" class="btn btn-primary" style="margin-top:16px;">Termin vereinbaren</a>
+  <a href="mailto:marlene.krinninger@freenet.de?subject=Terminanfrage%20Holistic%20Pulsing" data-contact data-subject="Terminanfrage Holistic Pulsing" class="btn btn-primary" style="margin-top:16px;">Termin vereinbaren</a>
 </div>
 
 <main id="inhalt">
@@ -58,7 +58,7 @@
       <p class="hero-terms reveal" style="--d:.3s"><span>Sanft</span><span>Rhythmisch</span><span>Achtsam</span></p>
       <div class="hero-btns reveal" style="--d:.4s">
         <a href="#methode" class="btn btn-primary">Holistic Pulsing entdecken</a>
-        <a href="mailto:marlene.hajek2202@gmail.com?subject=Terminanfrage%20Holistic%20Pulsing" data-contact data-subject="Terminanfrage Holistic Pulsing" class="btn btn-outline">Termin anfragen</a>
+        <a href="mailto:marlene.krinninger@freenet.de?subject=Terminanfrage%20Holistic%20Pulsing" data-contact data-subject="Terminanfrage Holistic Pulsing" class="btn btn-outline">Termin anfragen</a>
       </div>
     </div>
   </div>
@@ -200,6 +200,25 @@
   </div>
 </section>
 
+<!-- AUSBILDUNG -->
+<!-- Quelle: Zertifikate von Claudia Löw (Ausbildung 17.07.2022, Fortbildungen 13.04.2025 und 28.09.2025). Angaben mit Marlene bestätigen. -->
+<section class="p-cert" aria-labelledby="cert-h">
+  <div class="inner">
+    <div class="p-cert-grid">
+      <div class="p-cert-intro">
+        <span class="section-label reveal">Meine Ausbildung</span>
+        <h2 id="cert-h" class="big reveal" style="--d:.1s">Ausgebildet bei Claudia Löw.</h2>
+        <p class="reveal" style="--d:.2s">Holistic Pulsing habe ich bei Claudia Löw gelernt und mich seitdem in zwei Fortbildungen weiter vertieft.</p>
+      </div>
+      <ol class="cert-list">
+        <li class="reveal"><span class="cert-when">Juli 2022</span><div><h3>Ausbildung Holistic Pulsing</h3><p>Abgeschlossen bei Claudia Löw</p></div></li>
+        <li class="reveal" style="--d:.15s"><span class="cert-when">April 2025</span><div><h3>Fortbildung „Emotional Release“</h3><p>Holistic Pulsing, bei Claudia Löw</p></div></li>
+        <li class="reveal" style="--d:.3s"><span class="cert-when">September 2025</span><div><h3>Fortbildung „Kiefer, Nacken, Gesicht“</h3><p>Holistic Pulsing, bei Claudia Löw</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
 <!-- 8. FAQ -->
 <section class="p-faq" aria-labelledby="faq-h">
   <div class="inner">
@@ -245,8 +264,8 @@
   <div class="inner">
     <h2 id="cta-h" class="reveal">Schenk dir einen Moment, in dem du nichts leisten musst.</h2>
     <p class="sub reveal" style="--d:.1s">Ich freue mich darauf, dich kennenzulernen und dir einen Raum für Ruhe und achtsame Körperwahrnehmung zu bieten.</p>
-    <div class="reveal" style="--d:.2s"><a href="mailto:marlene.hajek2202@gmail.com?subject=Terminanfrage%20Holistic%20Pulsing" data-contact data-subject="Terminanfrage Holistic Pulsing" class="btn btn-cream">Holistic Pulsing anfragen</a></div>
-    <p class="cta-meta reveal" style="--d:.3s">Termine nur nach Vereinbarung, gerne auch am Wochenende.<br>Oder direkt: <a href="tel:+491712020208">+49 171 2020208</a> · <a href="mailto:marlene.hajek2202@gmail.com">marlene.hajek2202@gmail.com</a></p>
+    <div class="reveal" style="--d:.2s"><a href="mailto:marlene.krinninger@freenet.de?subject=Terminanfrage%20Holistic%20Pulsing" data-contact data-subject="Terminanfrage Holistic Pulsing" class="btn btn-cream">Holistic Pulsing anfragen</a></div>
+    <p class="cta-meta reveal" style="--d:.3s">Termine nur nach Vereinbarung, gerne auch am Wochenende.<br>Oder direkt: <a href="tel:+491712020208">+49 171 2020208</a> · <a href="mailto:marlene.krinninger@freenet.de">marlene.krinninger@freenet.de</a></p>
     <p class="cta-xlink reveal" style="--d:.35s">Du interessierst dich auch für Reiki? <a href="reiki.html">Zur Reiki-Seite</a></p>
   </div>
 </section>
@@ -257,7 +276,7 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="f-name">Marlene Krinninger</div>
-      <div class="f-addr">Holistic Pulsing &amp; Reiki · Würding 8, 94496 Ortenburg<br>+49 171 2020208 · marlene.hajek2202@gmail.com</div>
+      <div class="f-addr">Holistic Pulsing &amp; Reiki · Würding 8, 94496 Ortenburg<br>+49 171 2020208 · marlene.krinninger@freenet.de</div>
     </div>
     <nav class="footer-links" aria-label="Footer">
       <a href="pulsing.html">Holistic Pulsing</a>

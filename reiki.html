@@ -12,9 +12,9 @@
   <meta property="og:locale" content="de_DE">
   <link rel="icon" type="image/png" href="img/logo-360.png">
   <link rel="apple-touch-icon" href="img/logo-360.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/lato-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="preload" as="image" href="img/hero-1920.jpg">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/reiki.css">
@@ -33,7 +33,7 @@
     <li><a href="pulsing.html">Holistic Pulsing</a></li>
     <li><a href="reiki.html" class="active" aria-current="page">Reiki</a></li>
   </ul>
-  <a href="mailto:marlene.hajek2202@gmail.com?subject=Terminanfrage%20Reiki" data-contact data-subject="Terminanfrage Reiki" class="btn btn-primary nav-cta">Termin vereinbaren</a>
+  <a href="mailto:marlene.krinninger@freenet.de?subject=Terminanfrage%20Reiki" data-contact data-subject="Terminanfrage Reiki" class="btn btn-primary nav-cta">Termin vereinbaren</a>
   <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span><span></span>
   </button>
@@ -42,7 +42,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <a href="pulsing.html" class="ml">Holistic Pulsing</a>
   <a href="reiki.html" class="ml active">Reiki</a>
-  <a href="mailto:marlene.hajek2202@gmail.com?subject=Terminanfrage%20Reiki" data-contact data-subject="Terminanfrage Reiki" class="btn btn-primary" style="margin-top:16px;">Termin vereinbaren</a>
+  <a href="mailto:marlene.krinninger@freenet.de?subject=Terminanfrage%20Reiki" data-contact data-subject="Terminanfrage Reiki" class="btn btn-primary" style="margin-top:16px;">Termin vereinbaren</a>
 </div>
 
 <main id="inhalt">
@@ -56,7 +56,7 @@
     <p class="lead reveal" style="--d:.6s">Reiki ist eine aus Japan stammende Praxis der achtsamen Handauflegung. Entdecke eine ruhige Auszeit, in der du dich ganz auf dich selbst konzentrieren darfst.</p>
     <div class="hero-btns reveal" style="--d:.9s">
       <a href="#was-ist-reiki" class="btn btn-primary">Reiki kennenlernen</a>
-      <a href="mailto:marlene.hajek2202@gmail.com?subject=Terminanfrage%20Reiki" data-contact data-subject="Terminanfrage Reiki" class="btn btn-outline">Termin anfragen</a>
+      <a href="mailto:marlene.krinninger@freenet.de?subject=Terminanfrage%20Reiki" data-contact data-subject="Terminanfrage Reiki" class="btn btn-outline">Termin anfragen</a>
     </div>
     <div class="hero-line" aria-hidden="true"></div>
   </div>
@@ -226,6 +226,20 @@
   </div>
 </section>
 
+<!-- AUSBILDUNG -->
+<!-- Quelle: Zertifikat "2. Reiki Grad" von Claudia Löw (13.04.2012, Jahr bitte bestätigen). -->
+<section class="r-cert" aria-labelledby="rcert-h">
+  <div class="inner center">
+    <span class="section-label reveal">Meine Ausbildung</span>
+    <h2 id="rcert-h" class="big reveal" style="--d:.2s">Ausgebildet bei Claudia Löw.</h2>
+    <div class="cert-seal reveal" style="--d:.4s">
+      <svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="98"/><circle cx="100" cy="100" r="88"/></svg>
+      <div class="cert-seal-text"><strong>2. Reiki-Grad</strong><span>Ausbildung, 2012</span></div>
+    </div>
+    <p class="cert-text reveal" style="--d:.6s">Die Ausbildung zum 2. Reiki-Grad habe ich bei Claudia Löw am Institut für psychologische Beratung und Körperarbeit (Ur-Wege) abgeschlossen.</p>
+  </div>
+</section>
+
 <!-- 8. AUF EINEN BLICK -->
 <section class="r-glance" aria-labelledby="glance-h">
   <div class="inner">
@@ -239,7 +253,7 @@
       <div><dt>Ort</dt><dd>Würding 8<br>94496 Ortenburg</dd></div>
       <div><dt>Kleidung</dt><dd>Bequem, vollständig bekleidet</dd></div>
       <div><dt>Vorkenntnisse</dt><dd>Keine erforderlich</dd></div>
-      <div><dt>Kontakt</dt><dd><a href="tel:+491712020208">+49 171 2020208</a><br><a href="mailto:marlene.hajek2202@gmail.com">E-Mail schreiben</a></dd></div>
+      <div><dt>Kontakt</dt><dd><a href="tel:+491712020208">+49 171 2020208</a><br><a href="mailto:marlene.krinninger@freenet.de">E-Mail schreiben</a></dd></div>
     </dl>
     <p class="note-box reveal"><strong>Hinweis:</strong> Reiki ist eine ergänzende Praxis zur Entspannung. Sie dient nicht der Diagnose oder Behandlung von Erkrankungen und ersetzt keine ärztliche oder psychotherapeutische Behandlung.</p>
   </div>
@@ -251,8 +265,8 @@
   <div class="inner">
     <h2 id="cta-h" class="reveal">Vielleicht ist genau jetzt Zeit für einen Moment nur für dich.</h2>
     <p class="sub reveal" style="--d:.3s">Du hast Fragen oder möchtest Reiki kennenlernen? Ich freue mich über deine Nachricht.</p>
-    <div class="reveal" style="--d:.6s"><a href="mailto:marlene.hajek2202@gmail.com?subject=Terminanfrage%20Reiki" data-contact data-subject="Terminanfrage Reiki" class="btn btn-primary">Reiki-Termin anfragen</a></div>
-    <p class="cta-meta reveal" style="--d:.8s">Termine nur nach Vereinbarung, gerne auch am Wochenende.<br>Oder direkt: <a href="tel:+491712020208">+49 171 2020208</a> · <a href="mailto:marlene.hajek2202@gmail.com">marlene.hajek2202@gmail.com</a></p>
+    <div class="reveal" style="--d:.6s"><a href="mailto:marlene.krinninger@freenet.de?subject=Terminanfrage%20Reiki" data-contact data-subject="Terminanfrage Reiki" class="btn btn-primary">Reiki-Termin anfragen</a></div>
+    <p class="cta-meta reveal" style="--d:.8s">Termine nur nach Vereinbarung, gerne auch am Wochenende.<br>Oder direkt: <a href="tel:+491712020208">+49 171 2020208</a> · <a href="mailto:marlene.krinninger@freenet.de">marlene.krinninger@freenet.de</a></p>
     <p class="cta-xlink reveal" style="--d:.9s">Du interessierst dich auch für Holistic Pulsing? <a href="pulsing.html">Zur Pulsing-Seite</a></p>
   </div>
 </section>
@@ -263,7 +277,7 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="f-name">Marlene Krinninger</div>
-      <div class="f-addr">Holistic Pulsing &amp; Reiki · Würding 8, 94496 Ortenburg<br>+49 171 2020208 · marlene.hajek2202@gmail.com</div>
+      <div class="f-addr">Holistic Pulsing &amp; Reiki · Würding 8, 94496 Ortenburg<br>+49 171 2020208 · marlene.krinninger@freenet.de</div>
     </div>
     <nav class="footer-links" aria-label="Footer">
       <a href="pulsing.html">Holistic Pulsing</a>

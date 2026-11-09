@@ -124,6 +124,16 @@ h2.big { font-size: clamp(1.9rem, 3.6vw, 2.8rem); color: var(--green-dark); }
 .know-list p { color: var(--text); }
 .p-know .note-box { margin-top: 30px; padding: 18px 22px; background: var(--cream); border-left: 3px solid var(--gold); border-radius: 0 var(--radius) var(--radius) 0; }
 
+/* ---------- Ausbildung ---------- */
+.p-cert { background: var(--beige); }
+.p-cert-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: start; }
+.p-cert-intro p { color: var(--text-muted); margin-top: 18px; max-width: 380px; }
+.cert-list li { display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 28px 0; border-top: 1px solid rgba(143,96,56,0.4); align-items: baseline; }
+.cert-list li:last-child { border-bottom: 1px solid rgba(143,96,56,0.4); }
+.cert-when { font-family: 'Dancing Script', cursive; font-size: 1.7rem; font-weight: 600; color: var(--gold-text); line-height: 1.2; }
+.cert-list h3 { font-size: 1.35rem; color: var(--green-dark); margin-bottom: 4px; }
+.cert-list p { color: var(--text-muted); font-size: 0.97rem; }
+
 /* ---------- 8. FAQ ---------- */
 .p-faq { background: var(--cream); }
 .p-faq-grid { display: grid; grid-template-columns: 4fr 7fr; gap: 80px; align-items: start; }
@@ -181,6 +191,7 @@ h2.big { font-size: clamp(1.9rem, 3.6vw, 2.8rem); color: var(--green-dark); }
   .p-know-photo { position: static; --ar: 4 / 3; max-width: 520px; width: 100%; margin: 0 auto; border-radius: 32px 32px 100px 32px; }
   .p-faq-grid { grid-template-columns: 1fr; }
   .p-faq-side { position: static; }
+  .p-cert-grid { grid-template-columns: 1fr; gap: 36px; }
   .p-line { padding: 90px 0 80px; }
   .p-cta { padding: 100px 0 96px; background-size: 260%; background-position: 40% 70%; }
   .r1 .story-photo, .r3 .story-photo { margin: 0; }
@@ -207,6 +218,7 @@ h2.big { font-size: clamp(1.9rem, 3.6vw, 2.8rem); color: var(--green-dark); }
   .story-photo, .r3 .story-photo { border-radius: 24px 70px 24px 70px; }
 }
 @media (max-width: 600px) {
+  .cert-list li { grid-template-columns: 1fr; gap: 2px; }
   .p-intro-text { padding-left: 0; padding-top: 0; }
   .vlabel { position: static; writing-mode: horizontal-tb; transform: none; margin-bottom: 14px; }
   .vlabel::after { width: 50px; height: 1px; }
